@@ -40,3 +40,6 @@ set undolevels=1000
 
 " No swap files
 set noswapfile
+
+" Don't wrap lines
+set nowrap
