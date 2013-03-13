@@ -20,7 +20,7 @@ au BufNewFile,BufReadPre *.less setlocal filetype=less shiftwidth=2 tabstop=1
 
 " Statisline 
 set statusline= 
-set statusline+=%F\                          " path
+set statusline+=%f\                          " path
 set statusline+=%h%m%r%w                     " flags
 set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
