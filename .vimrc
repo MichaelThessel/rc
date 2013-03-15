@@ -13,20 +13,20 @@ set smartindent
 
 " Tabs & Spaces
 au BufNewFile,BufReadPre *.html setlocal shiftwidth=2 tabstop=1
-au BufNewFile,BufReadPre *.phtml setlocal filetype=html shiftwidth=2 tabstop=1 
-au BufNewFile,BufReadPre *.js setlocal filetype=javascript shiftwidth=2 tabstop=1 
+au BufNewFile,BufReadPre *.phtml setlocal filetype=html shiftwidth=2 tabstop=1
+au BufNewFile,BufReadPre *.js setlocal filetype=javascript shiftwidth=2 tabstop=1
 au BufNewFile,BufReadPre *.tpl.php setlocal filetype=html shiftwidth=2 tabstop=1
 au BufNewFile,BufReadPre *.less setlocal filetype=less shiftwidth=2 tabstop=1
 
-" Statisline 
-set statusline= 
+" Statisline
+set statusline=
 set statusline+=%f\                          " path
 set statusline+=%h%m%r%w                     " flags
 set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
 set statusline+=%{&fileformat}]              " file format
 set statusline+=%=                           " right align
-set statusline+=col\:\ %c\                   " Current col 
+set statusline+=col\:\ %c\                   " Current col
 set statusline+=row\:\ %l/%L                 " Current line
 
 " Line numbers
@@ -43,3 +43,7 @@ set noswapfile
 
 " Don't wrap lines
 set nowrap
+
+" Hightligh formatting issues (whitespace, lines 80+ chars)
+highlight Formatting ctermbg=darkred ctermfg=white guibg=darkred
+match Formatting /\%81v.\+\|\s\+$/
