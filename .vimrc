@@ -57,7 +57,7 @@ set nowrap
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
 highlight Formatting ctermbg=darkred ctermfg=white guibg=darkred
-match Formatting /\%81v.\+\|\s\+$/
+au BufWinEnter * match Formatting /\%81v.\+\|\s\+$/
 
 " List mode
 set list
