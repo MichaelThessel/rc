@@ -1,0 +1,16 @@
+[user]
+	email = foo@example.com
+	name = Michael Thessel
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[core]
+	excludesfile = /home/michael/.gitignore
