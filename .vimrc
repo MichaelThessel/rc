@@ -1,3 +1,5 @@
+set nocompatible
+
 set t_Co=256
 colorscheme herald
 
@@ -56,9 +58,13 @@ set noswapfile
 set nowrap
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
-highlight Formatting ctermbg=darkred ctermfg=white guibg=darkred
+highlight Formatting ctermbg=16 ctermfg=102 guibg=16
 au BufWinEnter * match Formatting /\%81v.\+\|\s\+$/
 
 " List mode
 set list
 set listchars=tab:>-,precedes:<,extends:>
+
+" Parenthesis matching
+let loaded_matchparen = 0
+
