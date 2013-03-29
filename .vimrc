@@ -70,3 +70,5 @@ set listchars=tab:>-,precedes:<,extends:>
 " Parenthesis matching
 let loaded_matchparen = 0
 
+" File name completeion
+set wildmode=longest,list
