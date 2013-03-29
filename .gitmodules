@@ -1,0 +1,6 @@
+[submodule "submodules/vim/php.vim"]
+	path = submodules/vim/php.vim
+	url = https://github.com/StanAngeloff/php.vim.git
+[submodule "submodules/vim/womprat.vim"]
+	path = submodules/vim/womprat.vim
+	url = https://github.com/jtai/vim-womprat.git

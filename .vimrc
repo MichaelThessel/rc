@@ -1,7 +1,7 @@
 set nocompatible
 
 set t_Co=256
-colorscheme herald
+colorscheme womprat
 
 " Make
 map <C-T> :w<CR>:make <CR>
