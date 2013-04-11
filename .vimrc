@@ -72,3 +72,7 @@ let loaded_matchparen = 0
 
 " File name completeion
 set wildmode=longest,list
+
+" Open file at line number file was left
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
