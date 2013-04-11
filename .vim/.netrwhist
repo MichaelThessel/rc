@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/src/paperdivas/app/code/local/PaperDivas/CustomProduct/GuestnameModel/Product'
-let g:netrw_dirhist_2='/src/paperdivas/app/code/local/PaperDivas/CustomProduct/GuestnameModel/Product/Type'
-let g:netrw_dirhist_3='/src/paperdivas/app/code/local/PaperDivas/CustomProduct/Model/Product/Type'
-let g:netrw_dirhist_4='/src/managegt/protected/views/ssl'
