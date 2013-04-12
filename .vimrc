@@ -93,3 +93,6 @@ let g:pdv_cfg_License = ""
 
 " Disable folding
 set nofoldenable
+
+" Prevent snippets from overwriting identation settings
+let g:nsippet_no_indentation_settings = 1
