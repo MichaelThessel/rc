@@ -4,3 +4,6 @@
 [submodule "submodules/vim/womprat.vim"]
 	path = submodules/vim/womprat.vim
 	url = https://github.com/jtai/vim-womprat.git
+[submodule "submodules/vim/phpfolding.vim"]
+	path = submodules/vim/phpfolding.vim
+	url = https://github.com/vim-scripts/phpfolding.vim.git

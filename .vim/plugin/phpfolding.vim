@@ -1,0 +1,1 @@
+../../submodules/vim/phpfolding.vim/plugin/phpfolding.vim

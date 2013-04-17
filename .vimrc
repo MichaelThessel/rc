@@ -76,3 +76,7 @@ set wildmode=longest,list
 " Open file at line number file was left
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
+
+" Folding keyboard shortcuts
+map f <Esc>:EnableFastPHPFolds<Cr>
+map F <Esc>:DisablePHPFolds<Cr>
