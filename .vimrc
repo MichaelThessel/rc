@@ -1,3 +1,7 @@
+" Autoload modules
+call pathogen#incubate()
+call pathogen#helptags()
+
 set nocompatible
 
 set t_Co=256
@@ -83,9 +87,9 @@ map F <Esc>:DisablePHPFolds<Cr>
 let g:DisableAutoPHPFolding = 1
 
 " PHP Documentor
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
+inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-D> :call PhpDocSingle()<CR>
+vnoremap <C-D> :call PhpDocRange()<CR>
 let g:pdv_cfg_Package = ""
 let g:pdv_cfg_Version = ""
 let g:pdv_cfg_Author = "Michael Thessel"

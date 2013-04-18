@@ -1,3 +1,18 @@
-[submodule "submodules/vim/php-documentor.vim"]
-	path = submodules/vim/php-documentor.vim
-	url = git://github.com/sumpygump/php-documentor-vim.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule ".vim/bundle/php-syntax"]
+	path = .vim/bundle/php-syntax
+	url = https://github.com/vim-scripts/php.vim--Garvin.git
+[submodule ".vim/bundle/php-folding"]
+	path = .vim/bundle/php-folding
+	url = https://github.com/nishigori/phpfolding.vim.git
+[submodule ".vim/bundle/womprat"]
+	path = .vim/bundle/womprat
+	url = https://github.com/jtai/vim-womprat.git
+[submodule ".vim/bundle/pathogen"]
+	path = .vim/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/php-documentor"]
+	path = .vim/bundle/php-documentor
+	url = https://github.com/sumpygump/php-documentor-vim.git
