@@ -81,11 +81,6 @@ set wildmode=longest,list
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
 
-" Folding keyboard shortcuts
-map f <Esc>:EnableFastPHPFolds<Cr>
-map F <Esc>:DisablePHPFolds<Cr>
-let g:DisableAutoPHPFolding = 1
-
 " PHP Documentor
 inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-D> :call PhpDocSingle()<CR>
@@ -95,3 +90,6 @@ let g:pdv_cfg_Version = ""
 let g:pdv_cfg_Author = "Michael Thessel"
 let g:pdv_cfg_Copyright = "2013"
 let g:pdv_cfg_License = ""
+
+" Disable folding
+set nofoldenable

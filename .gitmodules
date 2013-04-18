@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/php-syntax"]
 	path = .vim/bundle/php-syntax
 	url = https://github.com/vim-scripts/php.vim--Garvin.git
-[submodule ".vim/bundle/php-folding"]
-	path = .vim/bundle/php-folding
-	url = https://github.com/nishigori/phpfolding.vim.git
 [submodule ".vim/bundle/womprat"]
 	path = .vim/bundle/womprat
 	url = https://github.com/jtai/vim-womprat.git
