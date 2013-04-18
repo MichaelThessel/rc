@@ -20,14 +20,14 @@ set smarttab
 " Use a 4 space tab
 set shiftwidth=4
 " Number of spaces a <Tab> is displayed as
-set tabstop=8
+set tabstop=4
 
 " Tabs & Spaces
-au BufNewFile,BufReadPre *.html setlocal shiftwidth=2 tabstop=1
-au BufNewFile,BufReadPre *.phtml setlocal filetype=html shiftwidth=2 tabstop=1
-au BufNewFile,BufReadPre *.js setlocal filetype=javascript shiftwidth=2 tabstop=1
-au BufNewFile,BufReadPre *.tpl.php setlocal filetype=html shiftwidth=2 tabstop=1
-au BufNewFile,BufReadPre *.less setlocal filetype=less shiftwidth=2 tabstop=1
+au BufNewFile,BufReadPre *.html setlocal shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.phtml setlocal filetype=html shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.js setlocal filetype=javascript shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.tpl.php setlocal filetype=html shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.less setlocal filetype=less shiftwidth=2 tabstop=2
 
 " Always show the status line
 set laststatus=2
@@ -80,3 +80,13 @@ au BufWinEnter * silent loadview
 " Folding keyboard shortcuts
 map f <Esc>:EnableFastPHPFolds<Cr>
 map F <Esc>:DisablePHPFolds<Cr>
+
+" PHP Documentor
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+let g:pdv_cfg_Package = ""
+let g:pdv_cfg_Version = ""
+let g:pdv_cfg_Author = "Michael Thessel"
+let g:pdv_cfg_Copyright = "2013"
+let g:pdv_cfg_License = ""

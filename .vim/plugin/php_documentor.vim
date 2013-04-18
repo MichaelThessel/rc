@@ -1,0 +1,1 @@
+../../submodules/vim/php-documentor.vim/ftplugin/php_documentor.vim
