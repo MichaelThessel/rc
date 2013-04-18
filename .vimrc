@@ -80,6 +80,7 @@ au BufWinEnter * silent loadview
 " Folding keyboard shortcuts
 map f <Esc>:EnableFastPHPFolds<Cr>
 map F <Esc>:DisablePHPFolds<Cr>
+let g:DisableAutoPHPFolding = 1
 
 " PHP Documentor
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
