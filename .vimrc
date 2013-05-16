@@ -18,7 +18,7 @@ set autoindent
 " Automatically indent new lines after certain characters
 set smartindent
 " Expand tabs into spaces
-set expandtab
+"set expandtab
 " Handle expanded tab spaces
 set smarttab
 " Use a 4 space tab
@@ -96,3 +96,9 @@ set nofoldenable
 
 " Prevent snippets from overwriting identation settings
 let g:nsippet_no_indentation_settings = 1
+
+" PKP specific settings
+augroup PKP
+au BufRead,BufEnter /src/omp/* setl nolist noet
+au BufRead,BufEnter /src/ojs/* setl nolist noet
+augroup END
