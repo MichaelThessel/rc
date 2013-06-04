@@ -2,8 +2,13 @@
 call pathogen#incubate()
 call pathogen#helptags()
 
+" Enable filtype plugins
+filetype plugin on
+
+" Set nocompatible mode
 set nocompatible
 
+" Set color scheme
 set t_Co=256
 colorscheme womprat
 
@@ -18,7 +23,7 @@ set autoindent
 " Automatically indent new lines after certain characters
 set smartindent
 " Expand tabs into spaces
-set expandtab
+"set expandtab
 " Handle expanded tab spaces
 set smarttab
 " Use a 4 space tab
@@ -82,7 +87,7 @@ au BufWinLeave * mkview
 au BufWinEnter * silent loadview
 
 " PHP Documentor
-inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
+inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
 nnoremap <C-D> :call PhpDocSingle()<CR>
 vnoremap <C-D> :call PhpDocRange()<CR>
 let g:pdv_cfg_Package = ""
@@ -96,3 +101,9 @@ set nofoldenable
 
 " Prevent snippets from overwriting identation settings
 let g:nsippet_no_indentation_settings = 1
+
+" PKP specific settings
+augroup PKP
+au BufRead,BufEnter /src/omp/* setl nolist noet
+au BufRead,BufEnter /src/ojs/* setl nolist noet
+augroup END
