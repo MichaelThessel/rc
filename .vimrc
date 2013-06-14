@@ -37,6 +37,7 @@ au BufNewFile,BufReadPre *.phtml setlocal filetype=html shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.js setlocal filetype=javascript shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.tpl.php setlocal filetype=html shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.less setlocal filetype=less shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.scss setlocal filetype=scss shiftwidth=2 tabstop=2
 
 " Always show the status line
 set laststatus=2
