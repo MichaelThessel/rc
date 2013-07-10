@@ -23,7 +23,7 @@ set autoindent
 " Automatically indent new lines after certain characters
 set smartindent
 " Expand tabs into spaces
-"set expandtab
+set expandtab
 " Handle expanded tab spaces
 set smarttab
 " Use a 4 space tab
