@@ -20,8 +20,6 @@ set errorformat=%m\ in\ %f\ on\ line\ %l
 
 " Copy indent from current line when starting a new line
 set autoindent
-" Automatically indent new lines after certain characters
-set smartindent
 " Expand tabs into spaces
 set expandtab
 " Handle expanded tab spaces
