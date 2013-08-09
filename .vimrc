@@ -12,9 +12,6 @@ set nocompatible
 set t_Co=256
 colorscheme womprat
 
-" Make
-map <C-T> :w<CR>:make <CR>
-
 " Error format for make
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
@@ -105,6 +102,9 @@ let g:nsippet_no_indentation_settings = 1
 set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_map = '<c-n>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" Syntastic Plugin
+map <C-T> :SyntasticCheck <CR>
 
 " PKP specific settings
 augroup PKP
