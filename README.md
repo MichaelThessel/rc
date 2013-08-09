@@ -4,4 +4,4 @@ To install
 * cd rc
 * git submodule init
 * git submodule update
-* Symlink files into apropriate locations
+* Symlink files into appropriate locations
