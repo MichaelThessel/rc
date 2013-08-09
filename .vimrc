@@ -63,10 +63,10 @@ set noswapfile
 set nowrap
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
-highlight Spacing ctermbg=darkred ctermfg=white guibg=darkred
-au BufWinEnter * match Spacing /\s\+$/
 highlight Linelength ctermbg=238 ctermfg=145 guibg=238
 au BufWinEnter * 2match Linelength /\%81v.\+/
+highlight Spacing ctermbg=darkred ctermfg=white guibg=darkred
+au BufWinEnter * match Spacing /\s\+$/
 
 " List mode
 set list
