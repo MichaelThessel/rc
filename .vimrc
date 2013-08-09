@@ -95,6 +95,11 @@ let g:pdv_cfg_License = ""
 " Disable folding
 set nofoldenable
 
+" Disable help key
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
 " Prevent snippets from overwriting identation settings
 let g:nsippet_no_indentation_settings = 1
 
