@@ -115,13 +115,16 @@ nmap <leader>s :w <CR> :SyntasticCheck <CR>
 let g:airline_detect_whitespace=0
 
 " Fugitive plugin
-nmap <leader>d :Gdiff <CR>
+nmap <leader>gd :Gdiff <CR>
+nmap <leader>gs :Gstatus <CR>
+nmap <leader>gb :Gstatus <CR>
 
 " NERDTree plugin
 nmap <leader>t :NERDTreeToggle <CR>
 
 " Key Mappings
 nmap <leader>i :set paste <CR>
+nmap <leader>I :set nopaste <CR>
 
 " PKP specific settings
 augroup PKP
