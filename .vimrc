@@ -101,8 +101,13 @@ set nofoldenable
 " Prevent snippets from overwriting identation settings
 let g:nsippet_no_indentation_settings = 1
 
+" CtrlP Plugin
+set runtimepath^=~/.vim/bundle/ctrlp
+let g:ctrlp_map = '<c-n>'
+let g:ctrlp_cmd = 'CtrlP'
+
 " PKP specific settings
 augroup PKP
-au BufRead,BufEnter /src/omp/* setl nolist noet
-au BufRead,BufEnter /src/ojs/* setl nolist noet
+au BufRead,BufEnter /src/omp* setl nolist noet
+au BufRead,BufEnter /src/ojs* setl nolist noet
 augroup END
