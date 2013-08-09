@@ -104,7 +104,7 @@ let g:ctrlp_map = '<c-n>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Syntastic Plugin
-map <C-T> :SyntasticCheck <CR>
+map <C-T> :w <CR> :SyntasticCheck <CR>
 
 " PKP specific settings
 augroup PKP
