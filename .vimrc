@@ -109,16 +109,16 @@ let g:ctrlp_map = '\p'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Syntastic Plugin
-nmap \t :w <CR> :SyntasticCheck <CR>
+nmap <leader>t :w <CR> :SyntasticCheck <CR>
 
 " Airline plugin
 let g:airline_detect_whitespace=0
 
 " Fugitive plugin
-nmap \d :Gdiff <CR>
+nmap <leader>d :Gdiff <CR>
 
 " Key Mappings
-nmap \i :set paste <CR>
+nmap <leader>i :set paste <CR>
 
 " PKP specific settings
 augroup PKP
