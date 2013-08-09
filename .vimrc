@@ -106,6 +106,9 @@ let g:ctrlp_cmd = 'CtrlP'
 " Syntastic Plugin
 nmap \t :w <CR> :SyntasticCheck <CR>
 
+" Airline plugin
+let g:airline_detect_whitespace=0
+
 " PKP specific settings
 augroup PKP
 au BufRead,BufEnter /src/omp* setl nolist noet
