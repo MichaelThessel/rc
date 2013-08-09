@@ -100,11 +100,11 @@ let g:nsippet_no_indentation_settings = 1
 
 " CtrlP Plugin
 set runtimepath^=~/.vim/bundle/ctrlp
-let g:ctrlp_map = '<c-n>'
+let g:ctrlp_map = '\p'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Syntastic Plugin
-map <C-T> :w <CR> :SyntasticCheck <CR>
+nmap \t :w <CR> :SyntasticCheck <CR>
 
 " PKP specific settings
 augroup PKP
