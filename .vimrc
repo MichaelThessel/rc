@@ -109,6 +109,12 @@ nmap \t :w <CR> :SyntasticCheck <CR>
 " Airline plugin
 let g:airline_detect_whitespace=0
 
+" Fugitive plugin
+nmap \d :Gdiff <CR>
+
+" Key Mappings
+nmap \i :set paste <CR>
+
 " PKP specific settings
 augroup PKP
 au BufRead,BufEnter /src/omp* setl nolist noet
