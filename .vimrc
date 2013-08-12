@@ -107,6 +107,8 @@ let g:nsippet_no_indentation_settings = 1
 set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_map = '\p'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'raw'
+let g:ctrlp_max_files=0
 
 " Syntastic Plugin
 nmap <leader>s :w <CR> :SyntasticCheck <CR>
