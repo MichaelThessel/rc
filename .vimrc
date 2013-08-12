@@ -79,8 +79,8 @@ let loaded_matchparen = 0
 set wildmode=longest,list
 
 " Open file at line number file was left
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+au BufWinLeave ?* mkview
+au BufWinEnter ?* silent loadview
 
 " PHP Documentor
 inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
