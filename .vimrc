@@ -112,6 +112,7 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 " Syntastic Plugin
 nmap <leader>s :w <CR> :SyntasticCheck <CR>
+let g:syntastic_php_checkers=['php']
 
 " Airline plugin
 let g:airline_detect_whitespace=0
