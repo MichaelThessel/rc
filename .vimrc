@@ -63,7 +63,7 @@ set noswapfile
 set nowrap
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
-highlight Linelength ctermbg=238 ctermfg=145 guibg=238
+highlight Linelength ctermbg=236 guibg=236
 au BufWinEnter * 2match Linelength /\%81v.\+/
 highlight Spacing ctermbg=darkred ctermfg=white guibg=darkred
 au BufWinEnter * match Spacing /\s\+$/
@@ -128,6 +128,8 @@ nmap <leader>t :NERDTreeToggle <CR>
 " Key Mappings
 nmap <leader>i :set paste <CR>
 nmap <leader>I :set nopaste <CR>
+nmap <leader>w :set wrap <CR>
+nmap <leader>W :set nowrap <CR>
 
 " PKP specific settings
 augroup PKP
