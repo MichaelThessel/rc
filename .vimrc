@@ -115,12 +115,12 @@ nmap <leader>s :w <CR> :SyntasticCheck <CR>
 let g:syntastic_php_checkers=['php']
 
 " Airline plugin
-let g:airline_detect_whitespace=0
+let g:airline_detect_whitespace = 0
 
 " Fugitive plugin
 nmap <leader>gd :Gdiff <CR>
 nmap <leader>gs :Gstatus <CR>
-nmap <leader>gb :Gstatus <CR>
+nmap <leader>gb :Gblame <CR>
 
 " NERDTree plugin
 nmap <leader>t :NERDTreeToggle <CR>
