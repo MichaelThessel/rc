@@ -14,13 +14,13 @@ termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce on
 
 # Open 10 tabs when starting up
-screen -t bash 0
-screen -t bash 1
-screen -t bash 2
-screen -t bash 3
-screen -t bash 4
-screen -t bash 5
-screen -t bash 6
-screen -t bash 7
-screen -t bash 8
 screen -t bash 9
+screen -t bash 8
+screen -t bash 7
+screen -t bash 6
+screen -t bash 5
+screen -t bash 4
+screen -t bash 3
+screen -t bash 2
+screen -t bash 1
+screen -t bash 0
