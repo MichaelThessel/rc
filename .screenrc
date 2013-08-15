@@ -1,14 +1,26 @@
 altscreen on
 term screen-256color
 
-#change the hardstatus settings to give an window list at the bottom of the
-#screen, with the time and date and with the current window highlighted
+# Change the hardstatus settings to give an window list at the bottom of the
+# Screen, with the time and date and with the current window highlighted
 hardstatus alwayslastline
 hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %d/%m/%y %c ]%{W}'
 startup_message off
 defscrollback 30000
 
-#terminfo and termcap for nice 256 color terminal
+# Terminfo and termcap for nice 256 color terminal
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce on
+
+# Open 10 tabs when starting up
+screen -t bash 0
+screen -t bash 1
+screen -t bash 2
+screen -t bash 3
+screen -t bash 4
+screen -t bash 5
+screen -t bash 6
+screen -t bash 7
+screen -t bash 8
+screen -t bash 9
