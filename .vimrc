@@ -130,6 +130,7 @@ nmap <leader>i :set paste <CR>
 nmap <leader>I :set nopaste <CR>
 nmap <leader>w :set wrap <CR>
 nmap <leader>W :set nowrap <CR>
+vmap <leader>w :s/\s\+$//g <CR> " Whitepsace cleanup
 
 " PKP specific settings
 augroup PKP
