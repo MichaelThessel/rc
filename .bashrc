@@ -5,4 +5,5 @@ export HISTCONTROL=ignoredups
 [ "$TERM" != "dumb" ] && eval "`dircolors -b`" && alias ls='ls --color=auto'
 
 # Aliases
+alias grep='grep -s'
 alias phpgrep='grep --include="*.php"'
