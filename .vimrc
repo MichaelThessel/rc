@@ -2,6 +2,9 @@
 call pathogen#incubate()
 call pathogen#helptags()
 
+" Enable parenthesis matching plugin
+runtime plugin/matchparen.vim
+
 " Enable filtype plugins
 filetype plugin on
 
@@ -65,8 +68,11 @@ set nowrap
 " Hightlight formatting issues (whitespace, lines 80+ chars)
 highlight Linelength ctermbg=234 guibg=234
 au BufWinEnter * 2match Linelength /\%81v.\+/
-highlight Spacing ctermbg=darkred ctermfg=white guibg=darkred
+highlight Spacing ctermbg=darkred ctermfg=white
 au BufWinEnter * match Spacing /\s\+$/
+
+" Highlight matching parenthis
+highlight MatchParen ctermbg=lightblue ctermfg=black
 
 " List mode
 set list
