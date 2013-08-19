@@ -12,6 +12,7 @@ alias phpgrep='grep --include="*.php"'
 # http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
 
 # Reset
+source ~/rc/.bashgit
 Color_Off="\[\033[0m\]"       # Text Reset
 
 # Regular Colors
