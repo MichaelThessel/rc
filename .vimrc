@@ -13,7 +13,8 @@ set nocompatible
 
 " Set color scheme
 set t_Co=256
-colorscheme womprat
+colorscheme molokai
+let molokai_original = 1
 
 " Error format for make
 set errorformat=%m\ in\ %f\ on\ line\ %l
