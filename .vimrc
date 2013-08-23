@@ -143,4 +143,6 @@ vmap <leader>w :s/\s\+$//g <CR> " Whitepsace cleanup
 augroup PKP
 au BufRead,BufEnter /src/omp* setl nolist noet
 au BufRead,BufEnter /src/ojs* setl nolist noet
+au BufRead,BufEnter /src/omp* set tags=~/.vim/mytags/omp
+au BufRead,BufEnter /src/ojs* set tags=~/.vim/mytags/ojs
 augroup END
