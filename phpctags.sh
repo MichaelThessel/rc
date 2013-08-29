@@ -1,5 +1,5 @@
 #!/bin/bash
-# use ./ctags projectName path
+# use ./phpctags projectName path
 exec ctags-exuberant -f ~/.vim/mytags/$1 \
 -h \".php\" -R \
 --exclude=\"\.svn\" \
