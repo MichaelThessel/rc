@@ -122,6 +122,7 @@ let g:syntastic_php_checkers=['php']
 
 " Airline plugin
 let g:airline_detect_whitespace = 0
+let g:airline#extensions#tabline#enabled = 1
 
 " Fugitive plugin
 nmap <leader>gd :Gdiff <CR>
