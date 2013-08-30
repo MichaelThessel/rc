@@ -119,6 +119,7 @@ let g:ctrlp_clear_cache_on_exit = 0
 " Syntastic Plugin
 nmap <leader>s :w <CR> :SyntasticCheck <CR>
 let g:syntastic_php_checkers=['php']
+let g:syntastic_css_checkers=[]
 
 " Airline plugin
 let g:airline_detect_whitespace = 0
@@ -138,6 +139,8 @@ nmap <leader>I :set nopaste <CR>
 nmap <leader>w :set wrap <CR>
 nmap <leader>W :set nowrap <CR>
 vmap <leader>w :s/\s\+$//g <CR> " Whitepsace cleanup
+nmap <leader><tab> :bn<CR>
+nmap <leader><s-tab> :bp<CR>
 
 " PKP specific settings
 augroup PKP
