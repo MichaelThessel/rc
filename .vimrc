@@ -137,6 +137,11 @@ nmap <leader>gb :Gblame <CR>
 " NERDTree plugin
 nmap <leader>t :NERDTreeToggle <CR>
 
+" Taglist plugin
+nmap <leader>l :TlistToggle<CR>
+let g:Tlist_GainFocus_On_ToggleOpen = 1
+let g:tlist_php_settings = 'php;c:class;f:function'
+
 " Key Mappings
 set pastetoggle=<leader>i
 nmap <leader>w :set wrap <CR>
