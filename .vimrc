@@ -15,6 +15,9 @@ set nocompatible
 set t_Co=256
 colorscheme womprat
 
+" Search while you type
+set incsearch
+
 " Error format for make
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
@@ -36,6 +39,7 @@ au BufNewFile,BufReadPre *.js setlocal filetype=javascript shiftwidth=2 tabstop=
 au BufNewFile,BufReadPre *.tpl.php setlocal filetype=html shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.less setlocal filetype=less shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.scss setlocal filetype=scss shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.css setlocal filetype=scss shiftwidth=2 tabstop=2
 
 " Always show the status line
 set laststatus=2
@@ -66,7 +70,7 @@ set noswapfile
 set nowrap
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
-highlight Linelength ctermbg=234 guibg=234
+highlight Linelength ctermbg=236 guibg=236
 au BufWinEnter * 2match Linelength /\%81v.\+/
 highlight Spacing ctermbg=darkred ctermfg=white
 au BufWinEnter * match Spacing /\s\+$/
@@ -134,8 +138,7 @@ nmap <leader>gb :Gblame <CR>
 nmap <leader>t :NERDTreeToggle <CR>
 
 " Key Mappings
-nmap <leader>i :set paste <CR>
-nmap <leader>I :set nopaste <CR>
+set pastetoggle=<leader>i
 nmap <leader>w :set wrap <CR>
 nmap <leader>W :set nowrap <CR>
 vmap <leader>w :s/\s\+$//g <CR> " Whitepsace cleanup
@@ -148,4 +151,8 @@ au BufRead,BufEnter /src/omp* setl nolist noet
 au BufRead,BufEnter /src/ojs* setl nolist noet
 au BufRead,BufEnter /src/omp* set tags=~/.vim/mytags/omp
 au BufRead,BufEnter /src/ojs* set tags=~/.vim/mytags/ojs
+au BufRead,BufEnter /src/ojs*.php let g:syntastic_php_checkers=['php', 'phpcs']
+au BufRead,BufEnter /src/ojs*.php let g:syntastic_php_phpcs_args="--standard=PKP --tab-width=4 --report=csv"
+au BufRead,BufEnter /src/omp*.php let g:syntastic_php_checkers=['php', 'phpcs']
+au BufRead,BufEnter /src/omp*.php let g:syntastic_php_phpcs_args="--standard=PKP --tab-width=4 --report=csv"
 augroup END
