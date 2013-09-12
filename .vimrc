@@ -76,7 +76,7 @@ highlight Spacing ctermbg=darkred ctermfg=white
 au BufWinEnter * match Spacing /\s\+$/
 
 " Highlight matching parenthis
-highlight MatchParen ctermbg=lightblue ctermfg=black
+highlight MatchParen ctermbg=grey ctermfg=black
 
 " List mode
 set list
@@ -156,8 +156,4 @@ au BufRead,BufEnter /src/omp* setl nolist noet
 au BufRead,BufEnter /src/ojs* setl nolist noet
 au BufRead,BufEnter /src/omp* set tags=~/.vim/mytags/omp
 au BufRead,BufEnter /src/ojs* set tags=~/.vim/mytags/ojs
-au BufRead,BufEnter /src/ojs*.php let g:syntastic_php_checkers=['php', 'phpcs']
-au BufRead,BufEnter /src/ojs*.php let g:syntastic_php_phpcs_args="--standard=PKP --tab-width=4 --report=csv"
-au BufRead,BufEnter /src/omp*.php let g:syntastic_php_checkers=['php', 'phpcs']
-au BufRead,BufEnter /src/omp*.php let g:syntastic_php_phpcs_args="--standard=PKP --tab-width=4 --report=csv"
-augroup END
+au BufRead,BufEnter /src/ojs_stable set tags=~/.vim/mytags/ojs_stable
