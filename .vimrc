@@ -148,6 +148,7 @@ nmap <leader>W :set nowrap <CR>
 vmap <leader>w :s/\s\+$//g <CR> " Whitepsace cleanup
 nmap <leader><tab> :bn<CR>
 nmap <leader><s-tab> :bp<CR>
+nmap <leader>bd :bdelete<CR>
 
 " PKP specific settings
 augroup PKP
