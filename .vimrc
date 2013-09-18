@@ -141,6 +141,9 @@ nmap <leader>t :NERDTreeToggle <CR>
 " Tagbar plugin
 nmap <leader>l :TagbarToggle<CR>
 
+" Doxygen Toolkit plugin
+let g:DoxygenToolkit_briefTag_pre = ""
+
 " Key Mappings
 set pastetoggle=<leader>i
 nmap <leader>w :set wrap <CR>
@@ -157,3 +160,5 @@ au BufRead,BufEnter /src/ojs* setl nolist noet
 au BufRead,BufEnter /src/omp* set tags=~/.vim/mytags/omp
 au BufRead,BufEnter /src/ojs* set tags=~/.vim/mytags/ojs
 au BufRead,BufEnter /src/ojs_stable set tags=~/.vim/mytags/ojs_stable
+au BufRead,BufEnter /src/omp* nmap <C-d> :Dox <CR>
+au BufRead,BufEnter /src/ojs* nmap <C-d> :Dox <CR>
