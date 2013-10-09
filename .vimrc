@@ -159,6 +159,7 @@ au BufRead,BufEnter /src/omp* setl nolist noet
 au BufRead,BufEnter /src/ojs* setl nolist noet
 au BufRead,BufEnter /src/omp* set tags=~/.vim/mytags/omp
 au BufRead,BufEnter /src/ojs* set tags=~/.vim/mytags/ojs
-au BufRead,BufEnter /src/ojs_stable set tags=~/.vim/mytags/ojs_stable
+au BufRead,BufEnter /src/ojs_stable* set tags=~/.vim/mytags/ojs_stable
 au BufRead,BufEnter /src/omp* nmap <C-d> :Dox <CR>
 au BufRead,BufEnter /src/ojs* nmap <C-d> :Dox <CR>
+au BufRead,BufEnter /src/xmlps* set tags=~/.vim/mytags/xmlps
