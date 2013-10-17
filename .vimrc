@@ -153,6 +153,11 @@ nmap <leader><tab> :bn<CR>
 nmap <leader><s-tab> :bp<CR>
 nmap <leader>bd :bdelete<CR>
 
+" Keep pressing shift while saving
+cmap W :w<CR>
+cmap Wq :wq<CR>
+cmap WQ :wq<CR>
+
 " PKP specific settings
 augroup PKP
 au BufRead,BufEnter /src/omp* setl nolist noet
