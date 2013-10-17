@@ -105,6 +105,10 @@ let g:pdv_cfg_License = ""
 " Disable folding
 set nofoldenable
 
+" Allow to switch buffers without saving
+set hidden
+set confirm
+
 " Regular Key Mappings
 set pastetoggle=<leader>i
 nmap <leader>w :set wrap <CR>
