@@ -105,6 +105,20 @@ let g:pdv_cfg_License = ""
 " Disable folding
 set nofoldenable
 
+" Regular Key Mappings
+set pastetoggle=<leader>i
+nmap <leader>w :set wrap <CR>
+nmap <leader>W :set nowrap <CR>
+vmap <leader>w :s/\s\+$//g <CR> " Whitepsace cleanup
+nmap <leader><tab> :bn<CR>
+nmap <leader><s-tab> :bp<CR>
+nmap <leader>bd :bdelete<CR>
+
+" I keep pressing shift while saving
+cmap W :w<CR>
+cmap Wq :wq<CR>
+cmap WQ :wq<CR>
+
 " Disable help key
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -143,20 +157,6 @@ nmap <leader>l :TagbarToggle<CR>
 
 " Doxygen Toolkit plugin
 let g:DoxygenToolkit_briefTag_pre = ""
-
-" Key Mappings
-set pastetoggle=<leader>i
-nmap <leader>w :set wrap <CR>
-nmap <leader>W :set nowrap <CR>
-vmap <leader>w :s/\s\+$//g <CR> " Whitepsace cleanup
-nmap <leader><tab> :bn<CR>
-nmap <leader><s-tab> :bp<CR>
-nmap <leader>bd :bdelete<CR>
-
-" Keep pressing shift while saving
-cmap W :w<CR>
-cmap Wq :wq<CR>
-cmap WQ :wq<CR>
 
 " PKP specific settings
 augroup PKP
