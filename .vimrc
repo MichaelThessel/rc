@@ -162,6 +162,9 @@ nmap <leader>l :TagbarToggle<CR>
 " Doxygen Toolkit plugin
 let g:DoxygenToolkit_briefTag_pre = ""
 
+" Emmet plugin
+imap <leader>e <C-y>,
+
 " PKP specific settings
 augroup PKP
 au BufRead,BufEnter /src/omp* setl nolist noet

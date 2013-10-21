@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/doxygen-toolkit"]
 	path = .vim/bundle/doxygen-toolkit
 	url = https://github.com/vim-scripts/DoxygenToolkit.vim
+[submodule ".vim/bundle/emmet"]
+	path = .vim/bundle/emmet
+	url = https://github.com/mattn/emmet-vim.git
