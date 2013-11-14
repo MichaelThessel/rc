@@ -153,12 +153,6 @@ nmap <leader>gs :Gstatus <CR>
 nmap <leader>gb :Gblame <CR>
 map <leader>g> :diffget <CR>
 
-" NERDTree plugin
-nmap <leader>t :NERDTreeToggle <CR>
-
-" Tagbar plugin
-nmap <leader>l :TagbarToggle<CR>
-
 " Doxygen Toolkit plugin
 let g:DoxygenToolkit_briefTag_pre = ""
 
