@@ -169,3 +169,10 @@ au BufRead,BufEnter /src/ojs_stable* set tags=~/.vim/mytags/ojs_stable
 au BufRead,BufEnter /src/omp* nmap <C-d> :Dox <CR>
 au BufRead,BufEnter /src/ojs* nmap <C-d> :Dox <CR>
 au BufRead,BufEnter /src/xmlps* set tags=~/.vim/mytags/xmlps
+augroup end
+
+" Paperdivas specific settings
+augroup PAPERDIVAS
+au BufRead,BufEnter /src/paperdivas* set tags=~/.vim/mytags/paperdivas
+au BufRead,BufEnter /src/lovestruck* set tags=~/.vim/mytags/lovestruck
+augroup end
