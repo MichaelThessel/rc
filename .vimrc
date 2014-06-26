@@ -118,11 +118,6 @@ nmap <leader><tab> :bn<CR>
 nmap <leader><s-tab> :bp<CR>
 nmap <leader>bd :bdelete<CR>
 
-" I keep pressing shift while saving
-cmap W :w<CR>
-cmap Wq :wq<CR>
-cmap WQ :wq<CR>
-
 " Disable help key
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
