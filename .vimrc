@@ -12,8 +12,8 @@ filetype plugin on
 set nocompatible
 
 " Set color scheme
-set t_Co=256
-colorscheme womprat
+set background=light
+colorscheme solarized
 
 " Search while you type
 set incsearch
