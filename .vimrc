@@ -154,6 +154,9 @@ let g:DoxygenToolkit_briefTag_pre = ""
 " Emmet plugin
 imap <leader>e <C-y>,
 
+" Use xmllint to auto indent xml files http://goo.gl/N8wrXh
+au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
 " PKP specific settings
 augroup PKP
 au BufRead,BufEnter /src/omp* setl nolist noet
