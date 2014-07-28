@@ -7,6 +7,12 @@
 	prompt = false
 [alias]
 	d = difftool
+	co = checkout
+	s = status
+	ec = config --global -e
+	up = !git pull --rebase $@ && git submodule update --init --recursive
+	cob = checkout -b
+	cm = !git add -A && git commit -m
 [color]
 	branch = auto
 	diff = auto
