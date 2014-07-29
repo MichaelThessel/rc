@@ -13,6 +13,7 @@
 	up = !git pull --rebase $@ && git submodule update --init --recursive
 	cob = checkout -b
 	cm = !git add -A && git commit -m
+	em = !vim $(git status --short | egrep -v '^D' | sed -e 's/^...//' | xargs)
 [color]
 	branch = auto
 	diff = auto
