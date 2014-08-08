@@ -1,15 +1,36 @@
-" Autoload modules
-call pathogen#incubate()
-call pathogen#helptags()
+" Set nocompatible mode
+set nocompatible
+
+" Vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'git@github.com:vim-scripts/php.vim--Garvin.git'
+Plugin 'git@github.com:sumpygump/php-documentor-vim.git'
+Plugin 'git@github.com:MarcWeber/vim-addon-mw-utils.git'
+Plugin 'git@github.com:honza/vim-snippets.git'
+Plugin 'git@github.com:garbas/vim-snipmate.git'
+Plugin 'git@github.com:kien/ctrlp.vim.git'
+Plugin 'git@github.com:scrooloose/syntastic.git'
+Plugin 'git@github.com:bling/vim-airline.git'
+Plugin 'git@github.com:tpope/vim-fugitive.git'
+Plugin 'git@github.com:cakebaker/scss-syntax.vim.git'
+Plugin 'git@github.com:scrooloose/nerdcommenter.git'
+Plugin 'git@github.com:vim-scripts/DoxygenToolkit.vim'
+Plugin 'git@github.com:mattn/emmet-vim.git'
+Plugin 'git@github.com:altercation/vim-colors-solarized.git'
+Plugin 'git@github.com:joonty/vdebug.git'
+
+call vundle#end()
+filetype plugin indent on
 
 " Enable parenthesis matching plugin
 runtime plugin/matchparen.vim
 
 " Enable filtype plugins
 filetype plugin on
-
-" Set nocompatible mode
-set nocompatible
 
 " Set color scheme
 set background=light

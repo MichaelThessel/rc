@@ -2,3 +2,4 @@
 *.swo
 .vim/view
 .vim/.netrwhist
+.vim/bundle
