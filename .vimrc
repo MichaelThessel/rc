@@ -23,6 +23,7 @@ Plugin 'https://github.com/vim-scripts/DoxygenToolkit.vim'
 Plugin 'https://github.com/mattn/emmet-vim.git'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/joonty/vdebug.git'
+Plugin 'https://github.com/airblade/vim-gitgutter.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -36,6 +37,9 @@ filetype plugin on
 " Set color scheme
 set background=light
 colorscheme solarized
+
+" GITGutter
+highlight clear SignColumn
 
 " Search while you type
 set incsearch
