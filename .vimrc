@@ -1,7 +1,9 @@
 " Set nocompatible mode
 set nocompatible
 
-" Vundle
+" ##########################################
+" ############# Vundle Settings ############
+" ##########################################
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -28,6 +30,10 @@ Plugin 'https://github.com/airblade/vim-gitgutter.git'
 call vundle#end()
 filetype plugin indent on
 
+" ###########################################
+" ############# General Settings ############
+" ###########################################
+
 " Enable parenthesis matching plugin
 runtime plugin/matchparen.vim
 
@@ -38,9 +44,6 @@ filetype plugin on
 set background=light
 colorscheme solarized
 
-" GITGutter
-highlight clear SignColumn
-
 " Search while you type
 set incsearch
 
@@ -49,16 +52,20 @@ set errorformat=%m\ in\ %f\ on\ line\ %l
 
 " Copy indent from current line when starting a new line
 set autoindent
+
 " Expand tabs into spaces
 set expandtab
+
 " Handle expanded tab spaces
 set smarttab
+
 " Use a 4 space tab
 set shiftwidth=4
+
 " Number of spaces a <Tab> is displayed as
 set tabstop=4
 
-" Tabs & Spaces
+" Tabs & Spaces for specific file formats
 au BufNewFile,BufReadPre *.html setlocal shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.phtml setlocal filetype=html shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.tpl.php setlocal filetype=html shiftwidth=2 tabstop=2
@@ -104,7 +111,7 @@ au BufWinEnter * match Spacing /\s\+$/
 " Highlight matching parenthis
 highlight MatchParen ctermbg=grey ctermfg=black
 
-" List mode
+" Highlight tab characters
 set list
 set listchars=tab:>-,precedes:<,extends:>
 
@@ -118,16 +125,6 @@ set wildmode=longest,list
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 
-" PHP Documentor
-inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-D> :call PhpDocSingle()<CR>
-vnoremap <C-D> :call PhpDocRange()<CR>
-let g:pdv_cfg_Package = ""
-let g:pdv_cfg_Version = ""
-let g:pdv_cfg_Author = "Michael Thessel"
-let g:pdv_cfg_Copyright = "2013"
-let g:pdv_cfg_License = ""
-
 " Disable folding
 set nofoldenable
 
@@ -135,7 +132,14 @@ set nofoldenable
 set hidden
 set confirm
 
-" Regular Key Mappings
+" Use xmllint to auto indent xml files http://goo.gl/N8wrXh
+au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
+" ###########################################
+" ############# Key Mappings ################
+" ###########################################
+
+"  General mappings
 set pastetoggle=<leader>i
 nmap <leader>w :set wrap <CR>
 nmap <leader>W :set nowrap <CR>
@@ -149,41 +153,59 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" Prevent snippets from overwriting identation settings
+" ##############################################
+" ############# Plugin Settings ################
+" ##############################################
+
+" PHP Documentor
+inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
+nnoremap <C-D> :call PhpDocSingle()<CR>
+vnoremap <C-D> :call PhpDocRange()<CR>
+let g:pdv_cfg_Package = ""
+let g:pdv_cfg_Version = ""
+let g:pdv_cfg_Author = "Michael Thessel"
+let g:pdv_cfg_Copyright = "2013"
+let g:pdv_cfg_License = ""
+
+" Snipmate
 let g:nsippet_no_indentation_settings = 1
 
-" CtrlP Plugin
+" CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp
 let g:ctrlp_map = '\p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'raw'
 let g:ctrlp_clear_cache_on_exit = 0
 
-" Syntastic Plugin
+" Syntastic
 nmap <leader>s :w <CR> :SyntasticCheck <CR>
 let g:syntastic_php_checkers=['php']
 let g:syntastic_css_checkers=[]
 
-" Airline plugin
+" Airline
 let g:airline_detect_whitespace = 0
 let g:airline#extensions#tabline#enabled = 1
 
-" Fugitive plugin
+" Fugitive
 nmap <leader>gd :Gdiff <CR>
 nmap <leader>gs :Gstatus <CR>
 nmap <leader>gb :Gblame <CR>
 map <leader>g> :diffget <CR>
 
-" Doxygen Toolkit plugin
+" Doxygen Toolkit
 let g:DoxygenToolkit_briefTag_pre = ""
 
-" Emmet plugin
+" Emmet
 imap <leader>e <C-y>,
 
-" Use xmllint to auto indent xml files http://goo.gl/N8wrXh
-au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+" GITGutter
+highlight clear SignColumn
 
-" PKP specific settings
+" ###############################################
+" ############# Project Settings ################
+" ###############################################
+
+" PKP
 augroup PKP
 au BufRead,BufEnter /src/omp* setl nolist noet
 au BufRead,BufEnter /src/ojs* setl nolist noet
@@ -195,8 +217,13 @@ au BufRead,BufEnter /src/ojs* nmap <C-d> :Dox <CR>
 au BufRead,BufEnter /src/xmlps* set tags=~/.vim/mytags/xmlps
 augroup end
 
-" Paperdivas specific settings
+" Paperdivas
 augroup PAPERDIVAS
 au BufRead,BufEnter /src/paperdivas* set tags=~/.vim/mytags/paperdivas
 au BufRead,BufEnter /src/lovestruck* set tags=~/.vim/mytags/lovestruck
+augroup end
+
+" AC
+augroup AC
+au BufRead,BufEnter /src/ac* set tags=~/.vim/mytags/ac
 augroup end
