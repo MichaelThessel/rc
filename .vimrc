@@ -135,6 +135,17 @@ set confirm
 " Use xmllint to auto indent xml files http://goo.gl/N8wrXh
 au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
+" Dont replace the paste puffer on paste
+function! RestoreRegister()
+    let @" = s:restore_reg
+    return ''
+endfunction
+function! s:Repl()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
 " ###########################################
 " ############# Key Mappings ################
 " ###########################################
