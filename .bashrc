@@ -10,3 +10,6 @@ alias phpgrep='grep --include="*.php"'
 
 # Bash prompt with git status info
 source ~/.bashgit
+
+# Make sure .profile is sourced as well
+source ~/.profile
