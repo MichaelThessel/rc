@@ -5,9 +5,9 @@ set nocompatible
 " ############# Vundle Settings ############
 " ##########################################
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle'
 
 Plugin 'https://github.com/vim-scripts/php.vim--Garvin.git'
 Plugin 'https://github.com/sumpygump/php-documentor-vim.git'
