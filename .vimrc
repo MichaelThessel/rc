@@ -132,6 +132,10 @@ set nofoldenable
 set hidden
 set confirm
 
+" Keep 3 lines visible above the cursor at any given time
+set scrolloff=3
+
+
 " Use xmllint to auto indent xml files http://goo.gl/N8wrXh
 au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
@@ -158,6 +162,7 @@ vmap <leader>w :s/\s\+$//g <CR> " Whitepsace cleanup
 nmap <leader><tab> :bn<CR>
 nmap <leader><s-tab> :bp<CR>
 nmap <leader>bd :bdelete<CR>
+nmap <leader>v `[v`] " Select pasted text
 
 " Disable help key
 inoremap <F1> <ESC>
