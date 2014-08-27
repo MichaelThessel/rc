@@ -26,7 +26,6 @@ Plugin 'https://github.com/mattn/emmet-vim.git'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/joonty/vdebug.git'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 
 call vundle#end()
 filetype plugin indent on
