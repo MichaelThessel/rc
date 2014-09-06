@@ -206,6 +206,7 @@ let g:airline#extensions#tabline#enabled = 1
 nmap <leader>gd :Gdiff <CR>
 nmap <leader>gs :Gstatus <CR>
 nmap <leader>gb :Gblame <CR>
+nmap <leader>gc :Gread<CR>
 map <leader>g> :diffget <CR>
 
 " Doxygen Toolkit
