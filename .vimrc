@@ -15,7 +15,6 @@ Plugin 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
 Plugin 'https://github.com/tomtom/tlib_vim.git'
 Plugin 'https://github.com/honza/vim-snippets.git'
 Plugin 'https://github.com/garbas/vim-snipmate.git'
-Plugin 'https://github.com/kien/ctrlp.vim.git'
 Plugin 'https://github.com/scrooloose/syntastic.git'
 Plugin 'https://github.com/bling/vim-airline.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
@@ -26,6 +25,9 @@ Plugin 'https://github.com/mattn/emmet-vim.git'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/joonty/vdebug.git'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
+Plugin 'https://github.com/Shougo/unite.vim.git'
+Plugin 'https://github.com/Shougo/neomru.vim'
+Plugin 'https://github.com/Shougo/vimproc.vim.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -186,13 +188,6 @@ let g:pdv_cfg_License = ""
 " Snipmate
 let g:nsippet_no_indentation_settings = 1
 
-" CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp
-let g:ctrlp_map = '\p'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'raw'
-let g:ctrlp_clear_cache_on_exit = 0
-
 " Syntastic
 nmap <leader>s :w <CR> :SyntasticCheck <CR>
 let g:syntastic_php_checkers=['php']
@@ -217,6 +212,46 @@ imap <leader>e <C-y>,
 
 " GITGutter
 highlight clear SignColumn
+
+" Unite
+" Start Insert
+let g:unite_enable_start_insert = 1
+let g:unite_enable_short_source_names = 1
+
+" Open in bottom right
+let g:unite_split_rule = "botright"
+
+" Shorten the default update date of 500ms
+let g:unite_update_time = 300
+
+" set up mru limit
+let g:unite_source_file_mru_limit = 100
+
+" Save session automatically.
+let g:unite_source_session_enable_auto_save = 1
+
+" Use the fuzzy matcher for everything
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+" Use the rank sorter for everything
+call unite#filters#sorter_default#use(['sorter_rank'])
+
+" Set up some custom ignores
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+      \ 'ignore_pattern', join([
+      \ '\.git/',
+      \ 'tmp/',
+      \ '.sass-cache',
+      \ ], '\|'))
+
+" Files, Buffers, recursive async file search
+nnoremap <silent> <leader>f :<C-u>Unite -buffer-name=files buffer file_rec/async<CR>
+
+" Shows all your yanks, when you accidentally overwrite
+nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yanks history/yank<CR>
+
+" MRU All Vim buffers, not file buffer
+nnoremap <silent> <leader>r :<C-u>Unite -buffer-name=mru file_mru<CR>
 
 " ###############################################
 " ############# Project Settings ################
@@ -244,3 +279,4 @@ augroup end
 augroup AC
 au BufRead,BufEnter /src/ac* set tags=~/.vim/mytags/ac
 augroup end
+
