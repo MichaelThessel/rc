@@ -14,6 +14,9 @@
 	cob = checkout -b
 	cm = !git add -A && git commit -m
 	em = !vim $(git status --short | egrep -v '^.?D' | sed -e 's/^...//' | xargs)
+	uo = !git checkout master && git pull official master && git push origin master
+
+
 [color]
 	branch = auto
 	diff = auto
