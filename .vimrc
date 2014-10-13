@@ -192,6 +192,7 @@ let g:nsippet_no_indentation_settings = 1
 nmap <leader>s :w <CR> :SyntasticCheck <CR>
 let g:syntastic_php_checkers=['php']
 let g:syntastic_css_checkers=[]
+let g:syntastic_javascript_checkers = ['jshint']
 
 " Airline
 let g:airline_detect_whitespace = 0
