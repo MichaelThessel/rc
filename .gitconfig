@@ -15,6 +15,8 @@
 	cm = !git add -A && git commit -m
 	em = !vim $(git status --short | egrep -v '^.?D' | sed -e 's/^...//' | xargs)
 	uo = !git checkout master && git pull official master && git push origin master
+	lb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
 
 
 [color]
