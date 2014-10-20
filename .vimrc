@@ -28,6 +28,7 @@ Plugin 'https://github.com/airblade/vim-gitgutter.git'
 Plugin 'https://github.com/Shougo/unite.vim.git'
 Plugin 'https://github.com/Shougo/neomru.vim'
 Plugin 'https://github.com/Shougo/vimproc.vim.git'
+Plugin 'https://github.com/groenewege/vim-less.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -274,6 +275,7 @@ augroup end
 augroup PAPERDIVAS
 au BufRead,BufEnter /src/paperdivas* set tags=~/.vim/mytags/paperdivas
 au BufRead,BufEnter /src/lovestruck* set tags=~/.vim/mytags/lovestruck
+au BufRead,BufEnter /src/paperdivas_new* set tags=~/.vim/mytags/paperdivasnew
 augroup end
 
 " AC
