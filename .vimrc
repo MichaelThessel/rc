@@ -20,6 +20,7 @@ Plugin 'https://github.com/bling/vim-airline.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/cakebaker/scss-syntax.vim.git'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
+Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/vim-scripts/DoxygenToolkit.vim'
 Plugin 'https://github.com/mattn/emmet-vim.git'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
@@ -29,6 +30,7 @@ Plugin 'https://github.com/Shougo/unite.vim.git'
 Plugin 'https://github.com/Shougo/neomru.vim'
 Plugin 'https://github.com/Shougo/vimproc.vim.git'
 Plugin 'https://github.com/groenewege/vim-less.git'
+Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -75,7 +77,9 @@ au BufNewFile,BufReadPre *.tpl.php setlocal filetype=html shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.js setlocal filetype=javascript shiftwidth=4 tabstop=4
 au BufNewFile,BufReadPre *.less setlocal filetype=less shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.scss setlocal filetype=scss shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.css setlocal filetype=scss shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.css setlocal filetype=css shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.xml setlocal filetype=xml shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.twig setlocal filetype=html shiftwidth=2 tabstop=2
 
 " Always show the status line
 set laststatus=2
@@ -255,21 +259,12 @@ nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yanks history/yank<CR>
 " MRU All Vim buffers, not file buffer
 nnoremap <silent> <leader>r :<C-u>Unite -buffer-name=mru file_mru<CR>
 
+" Emmet plugin
+let g:user_emmet_leader_key='<leader>e'
+
 " ###############################################
 " ############# Project Settings ################
 " ###############################################
-
-" PKP
-augroup PKP
-au BufRead,BufEnter /src/omp* setl nolist noet
-au BufRead,BufEnter /src/ojs* setl nolist noet
-au BufRead,BufEnter /src/omp* set tags=~/.vim/mytags/omp
-au BufRead,BufEnter /src/ojs* set tags=~/.vim/mytags/ojs
-au BufRead,BufEnter /src/ojs_stable* set tags=~/.vim/mytags/ojs_stable
-au BufRead,BufEnter /src/omp* nmap <C-d> :Dox <CR>
-au BufRead,BufEnter /src/ojs* nmap <C-d> :Dox <CR>
-au BufRead,BufEnter /src/xmlps* set tags=~/.vim/mytags/xmlps
-augroup end
 
 " Paperdivas
 augroup PAPERDIVAS
@@ -282,4 +277,3 @@ augroup end
 augroup AC
 au BufRead,BufEnter /src/ac* set tags=~/.vim/mytags/ac
 augroup end
-
