@@ -200,7 +200,7 @@ let g:syntastic_css_checkers=[]
 let g:syntastic_javascript_checkers = ['jshint']
 
 " Airline
-let g:airline_detect_whitespace = 0
+let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 
 " Fugitive
