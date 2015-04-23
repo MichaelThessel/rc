@@ -262,6 +262,9 @@ nnoremap <silent> <leader>r :<C-u>Unite -buffer-name=mru file_mru<CR>
 " Emmet plugin
 let g:user_emmet_leader_key='<leader>e'
 
+" Fugitive
+map <leader>t :NERDTreeToggle <CR>
+
 " ###############################################
 " ############# Project Settings ################
 " ###############################################
