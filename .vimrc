@@ -49,6 +49,9 @@ filetype plugin on
 set background=light
 colorscheme solarized
 
+" Enable syntax highlighting
+syntax on
+
 " Search while you type
 set incsearch
 
@@ -170,6 +173,7 @@ nmap <leader><tab> :bn<CR>
 nmap <leader><s-tab> :bp<CR>
 nmap <leader>bd :bdelete<CR>
 nmap <leader>v `[v`] " Select pasted text
+imap jj <ESC>
 
 " Disable help key
 inoremap <F1> <ESC>
@@ -248,10 +252,12 @@ call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
       \ '\.git/',
       \ 'tmp/',
       \ '.sass-cache',
+      \ 'var/',
+      \ 'media/',
       \ ], '\|'))
 
 " Files, Buffers, recursive async file search
-nnoremap <silent> <leader>f :<C-u>Unite -buffer-name=files buffer file_rec/async<CR>
+nnoremap <silent> <leader>f :<C-u>Unite -buffer-name=files buffer file_rec/git<CR>
 
 " Shows all your yanks, when you accidentally overwrite
 nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yanks history/yank<CR>
