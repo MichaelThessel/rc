@@ -275,13 +275,6 @@ map <leader>t :NERDTreeToggle <CR>
 " ############# Project Settings ################
 " ###############################################
 
-" Paperdivas
-augroup PAPERDIVAS
-au BufRead,BufEnter /src/paperdivas* set tags=~/.vim/mytags/paperdivas
-au BufRead,BufEnter /src/lovestruck* set tags=~/.vim/mytags/lovestruck
-au BufRead,BufEnter /src/paperdivas_new* set tags=~/.vim/mytags/paperdivasnew
-augroup end
-
 " AC
 augroup AC
 au BufRead,BufEnter /src/ac* set tags=~/.vim/mytags/ac
