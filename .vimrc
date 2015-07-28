@@ -99,6 +99,7 @@ set statusline+=row\:\ %l/%L                 " Current line
 
 " Line numbers
 set number
+set relativenumber
 
 " Don't redraw while executing macros
 set lazyredraw
