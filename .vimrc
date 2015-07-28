@@ -20,15 +20,10 @@ Plugin 'https://github.com/bling/vim-airline.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/cakebaker/scss-syntax.vim.git'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
-Plugin 'https://github.com/scrooloose/nerdtree.git'
-Plugin 'https://github.com/vim-scripts/DoxygenToolkit.vim'
 Plugin 'https://github.com/mattn/emmet-vim.git'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/joonty/vdebug.git'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
-Plugin 'https://github.com/Shougo/unite.vim.git'
-Plugin 'https://github.com/Shougo/neomru.vim'
-Plugin 'https://github.com/Shougo/vimproc.vim.git'
 Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
 
@@ -146,7 +141,6 @@ set confirm
 " Keep 3 lines visible above the cursor at any given time
 set scrolloff=3
 
-
 " Use xmllint to auto indent xml files http://goo.gl/N8wrXh
 au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
@@ -215,56 +209,11 @@ nmap <leader>gb :Gblame <CR>
 nmap <leader>gc :Gread<CR>
 map <leader>g> :diffget <CR>
 
-" Doxygen Toolkit
-let g:DoxygenToolkit_briefTag_pre = ""
-
 " Emmet
 imap <leader>e <C-y>,
 
 " GITGutter
 highlight clear SignColumn
-
-" Unite
-" Start Insert
-let g:unite_enable_start_insert = 1
-let g:unite_enable_short_source_names = 1
-
-" Open in bottom right
-let g:unite_split_rule = "botright"
-
-" Shorten the default update date of 500ms
-let g:unite_update_time = 300
-
-" set up mru limit
-let g:unite_source_file_mru_limit = 100
-
-" Save session automatically.
-let g:unite_source_session_enable_auto_save = 1
-
-" Use the fuzzy matcher for everything
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-
-" Use the rank sorter for everything
-call unite#filters#sorter_default#use(['sorter_rank'])
-
-" Set up some custom ignores
-call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
-      \ 'ignore_pattern', join([
-      \ '\.git/',
-      \ 'tmp/',
-      \ '.sass-cache',
-      \ 'var/',
-      \ 'media/',
-      \ ], '\|'))
-
-" Files, Buffers, recursive async file search
-nnoremap <silent> <leader>f :<C-u>Unite -buffer-name=files buffer file_rec/git<CR>
-
-" Shows all your yanks, when you accidentally overwrite
-nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yanks history/yank<CR>
-
-" MRU All Vim buffers, not file buffer
-nnoremap <silent> <leader>r :<C-u>Unite -buffer-name=mru file_mru<CR>
 
 " Emmet plugin
 let g:user_emmet_leader_key='<leader>e'
