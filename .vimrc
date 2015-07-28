@@ -26,6 +26,7 @@ Plugin 'https://github.com/joonty/vdebug.git'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
 Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
+Plugin 'https://github.com/kien/ctrlp.vim.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -220,6 +221,9 @@ let g:user_emmet_leader_key='<leader>e'
 
 " Fugitive
 map <leader>t :NERDTreeToggle <CR>
+
+" CtrlP
+map <leader>p :CtrlP<CR>
 
 " ###############################################
 " ############# Project Settings ################
