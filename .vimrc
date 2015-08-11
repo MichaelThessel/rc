@@ -164,7 +164,8 @@ vmap <silent> <expr> p <sid>Repl()
 set pastetoggle=<leader>i
 nmap <leader>w :set wrap <CR>
 nmap <leader>W :set nowrap <CR>
-vmap <leader>w :s/\s\+$//g <CR> " Whitepsace cleanup
+nmap <leader>c :set wrap <CR> :set norelativenumber <CR> :set nonumber <CR> :set nolist <CR> :GitGutterDisable <CR> " Copy mode
+vmap <leader>w :s/\s\+$//g <CR> :%s/[^ ]\zs  \+/ /g <CR> " Whitepsace cleanup
 nmap <leader><tab> :bn<CR>
 nmap <leader><s-tab> :bp<CR>
 nmap <leader>bd :bdelete<CR>
