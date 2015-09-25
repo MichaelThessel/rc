@@ -159,6 +159,10 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
+" Open Quickfix window after grep and close it after file is selcted
+autocmd QuickFixCmdPost *grep* cwindow
+autocmd FileType qf nmap <buffer> <CR> <CR> :ccl <CR>
+
 " ###########################################
 " ############# Key Mappings ################
 " ###########################################
@@ -208,12 +212,12 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 
 " Fugitive
-nmap <leader>gd :Gdiff <CR>
-nmap <leader>gs :Gstatus <CR>
-nmap <leader>gb :Gblame <CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gb :Gblame<CR>
 nmap <leader>gc :Gread<CR>
-map <leader>g> :diffget <CR>
-map <leader>gg :Ggrep <C-R><C-W><CR>:copen<CR>
+nmap <leader>gg :Ggrep! <C-R><C-W><CR><CR>
+nmap <leader>g> :diffget<CR>
 
 " GITGutter
 highlight clear SignColumn
