@@ -126,7 +126,7 @@ set listchars=tab:>-,precedes:<,extends:>
 " Parenthesis matching
 let loaded_matchparen = 0
 
-" File name completeion
+" File name completion
 set wildmode=longest,list
 
 " Open file at line number file was left
@@ -148,7 +148,7 @@ set scrolloff=3
 " Use xmllint to auto indent xml files http://goo.gl/N8wrXh
 au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
-" Dont replace the paste puffer on paste
+" Dont replace the paste buffer on paste
 function! RestoreRegister()
     let @" = s:restore_reg
     return ''
