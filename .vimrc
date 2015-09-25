@@ -27,6 +27,7 @@ Plugin 'https://github.com/airblade/vim-gitgutter.git'
 Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
 Plugin 'https://github.com/kien/ctrlp.vim.git'
+Plugin 'https://github.com/unblevable/quick-scope.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -129,8 +130,10 @@ let loaded_matchparen = 0
 set wildmode=longest,list
 
 " Open file at line number file was left
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 " Disable folding
 set nofoldenable
@@ -210,14 +213,13 @@ nmap <leader>gs :Gstatus <CR>
 nmap <leader>gb :Gblame <CR>
 nmap <leader>gc :Gread<CR>
 map <leader>g> :diffget <CR>
-
-" Emmet
-imap <leader>e <C-y>,
+map <leader>gg :Ggrep <C-R><C-W><CR>:copen<CR>
 
 " GITGutter
 highlight clear SignColumn
 
 " Emmet plugin
+imap <leader>e <C-y>,
 let g:user_emmet_leader_key='<leader>e'
 
 " Fugitive
@@ -225,6 +227,36 @@ map <leader>t :NERDTreeToggle <CR>
 
 " CtrlP
 map <leader>p :CtrlP<CR>
+
+"Quick Scope
+
+function! Quick_scope_selective(movement)
+    let needs_disabling = 0
+    if !g:qs_enable
+        QuickScopeToggle
+        redraw
+        let needs_disabling = 1
+    endif
+
+    let letter = nr2char(getchar())
+
+    if needs_disabling
+        QuickScopeToggle
+    endif
+
+    return a:movement . letter
+endfunction
+
+let g:qs_enable = 0
+
+nnoremap <expr> <silent> f Quick_scope_selective('f')
+nnoremap <expr> <silent> F Quick_scope_selective('F')
+nnoremap <expr> <silent> t Quick_scope_selective('t')
+nnoremap <expr> <silent> T Quick_scope_selective('T')
+vnoremap <expr> <silent> f Quick_scope_selective('f')
+vnoremap <expr> <silent> F Quick_scope_selective('F')
+vnoremap <expr> <silent> t Quick_scope_selective('t')
+vnoremap <expr> <silent> T Quick_scope_selective('T')
 
 " ###############################################
 " ############# Project Settings ################
