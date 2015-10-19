@@ -25,7 +25,7 @@
 	interactive = auto
 	status = auto
 [core]
-	excludesfile = /home/michael/.gitignore
+	excludesfile = ~/.gitignore
 [credential]
 	helper = cache --timeout=86400
 [http]
