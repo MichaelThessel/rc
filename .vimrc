@@ -28,6 +28,9 @@ Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
 Plugin 'https://github.com/kien/ctrlp.vim.git'
 Plugin 'https://github.com/unblevable/quick-scope.git'
+Plugin 'https://github.com/Shougo/vimproc.vim.git'
+Plugin 'https://github.com/m2mdas/phpcomplete-extended.git'
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -262,11 +265,5 @@ vnoremap <expr> <silent> F Quick_scope_selective('F')
 vnoremap <expr> <silent> t Quick_scope_selective('t')
 vnoremap <expr> <silent> T Quick_scope_selective('T')
 
-" ###############################################
-" ############# Project Settings ################
-" ###############################################
-
-" AC
-augroup AC
-au BufRead,BufEnter /src/ac* set tags=~/.vim/mytags/ac
-augroup end
+" Phpcomplete
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
