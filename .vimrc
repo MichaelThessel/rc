@@ -31,6 +31,7 @@ Plugin 'https://github.com/unblevable/quick-scope.git'
 Plugin 'https://github.com/Shougo/vimproc.vim.git'
 Plugin 'https://github.com/m2mdas/phpcomplete-extended.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'https://github.com/elixir-lang/vim-elixir.git'
 
 call vundle#end()
 filetype plugin indent on
