@@ -11,10 +11,6 @@ Plugin 'gmarik/Vundle'
 
 Plugin 'https://github.com/vim-scripts/php.vim--Garvin.git'
 Plugin 'https://github.com/sumpygump/php-documentor-vim.git'
-Plugin 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
-Plugin 'https://github.com/tomtom/tlib_vim.git'
-Plugin 'https://github.com/honza/vim-snippets.git'
-Plugin 'https://github.com/garbas/vim-snipmate.git'
 Plugin 'https://github.com/scrooloose/syntastic.git'
 Plugin 'https://github.com/bling/vim-airline.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
@@ -201,11 +197,6 @@ let g:pdv_cfg_Version = ""
 let g:pdv_cfg_Author = "Michael Thessel"
 let g:pdv_cfg_Copyright = "2013"
 let g:pdv_cfg_License = ""
-
-" Snipmate
-let g:nsippet_no_indentation_settings = 1
-imap <leader><Space> <esc>a<Plug>snipMateNextOrTrigger
-smap <leader><Space> <Plug>snipMateNextOrTrigger
 
 " Syntastic
 nmap <leader>s :w <CR> :SyntasticCheck <CR>
