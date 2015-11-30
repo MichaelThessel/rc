@@ -203,6 +203,8 @@ let g:pdv_cfg_License = ""
 
 " Snipmate
 let g:nsippet_no_indentation_settings = 1
+imap <leader><Space> <esc>a<Plug>snipMateNextOrTrigger
+smap <leader><Space> <Plug>snipMateNextOrTrigger
 
 " Syntastic
 nmap <leader>s :w <CR> :SyntasticCheck <CR>
