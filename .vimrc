@@ -1,5 +1,3 @@
-" Set nocompatible mode
-set nocompatible
 
 " ##########################################
 " ############# Vundle Settings ############
@@ -28,6 +26,7 @@ Plugin 'https://github.com/Shougo/vimproc.vim.git'
 Plugin 'https://github.com/m2mdas/phpcomplete-extended.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/elixir-lang/vim-elixir.git'
+Plugin 'https://github.com/SirVer/ultisnips.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -261,3 +260,9 @@ vnoremap <expr> <silent> T Quick_scope_selective('T')
 
 " Phpcomplete
 autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<leader><space>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
