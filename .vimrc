@@ -11,6 +11,7 @@ Plugin 'https://github.com/vim-scripts/php.vim--Garvin.git'
 Plugin 'https://github.com/sumpygump/php-documentor-vim.git'
 Plugin 'https://github.com/scrooloose/syntastic.git'
 Plugin 'https://github.com/bling/vim-airline.git'
+Plugin 'https://github.com/vim-airline/vim-airline-themes.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/cakebaker/scss-syntax.vim.git'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
@@ -27,6 +28,7 @@ Plugin 'https://github.com/m2mdas/phpcomplete-extended.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/elixir-lang/vim-elixir.git'
 Plugin 'https://github.com/SirVer/ultisnips.git'
+Plugin 'https://github.com/leafgarland/typescript-vim.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -42,7 +44,7 @@ runtime plugin/matchparen.vim
 filetype plugin on
 
 " Set color scheme
-set background=light
+set background=dark
 colorscheme solarized
 
 " Enable syntax highlighting
