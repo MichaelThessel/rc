@@ -112,13 +112,13 @@ set noswapfile
 set nowrap
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
-highlight Linelength ctermbg=7 guibg=7
+highlight Linelength ctermbg=235 guibg=235
 au BufWinEnter * 2match Linelength /\%81v.\+/
 highlight Spacing ctermbg=darkred ctermfg=white
 au BufWinEnter * match Spacing /\s\+$/
 
 " Highlight matching parenthis
-highlight MatchParen ctermbg=grey ctermfg=black
+highlight MatchParen ctermbg=166 ctermfg=166
 
 " Highlight tab characters
 set list
