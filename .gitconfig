@@ -26,6 +26,7 @@
 	status = auto
 [core]
 	excludesfile = ~/.gitignore
+	filemode = false
 [credential]
 	helper = cache --timeout=86400
 [http]
