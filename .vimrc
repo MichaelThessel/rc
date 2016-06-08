@@ -37,9 +37,6 @@ filetype plugin indent on
 " ############# General Settings ############
 " ###########################################
 
-" Enable parenthesis matching plugin
-runtime plugin/matchparen.vim
-
 " Enable filtype plugins
 filetype plugin on
 
@@ -117,15 +114,9 @@ au BufWinEnter * 2match Linelength /\%81v.\+/
 highlight Spacing ctermbg=darkred ctermfg=white
 au BufWinEnter * match Spacing /\s\+$/
 
-" Highlight matching parenthis
-highlight MatchParen ctermbg=166 ctermfg=166
-
 " Highlight tab characters
 set list
 set listchars=tab:>-,precedes:<,extends:>
-
-" Parenthesis matching
-let loaded_matchparen = 0
 
 " File name completion
 set wildmode=longest,list
