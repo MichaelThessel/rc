@@ -21,7 +21,7 @@ Plugin 'https://github.com/joonty/vdebug.git'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
 Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
-Plugin 'https://github.com/kien/ctrlp.vim.git'
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plugin 'https://github.com/unblevable/quick-scope.git'
 Plugin 'https://github.com/Shougo/vimproc.vim.git'
 Plugin 'https://github.com/m2mdas/phpcomplete-extended.git'
@@ -220,6 +220,8 @@ map <leader>t :NERDTreeToggle <CR>
 
 " CtrlP
 map <leader>p :CtrlP<CR>
+let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 "Quick Scope
 
