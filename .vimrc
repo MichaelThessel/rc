@@ -7,27 +7,40 @@ set rtp+=~/.vim/bundle/Vundle
 call vundle#begin()
 Plugin 'gmarik/Vundle'
 
-Plugin 'https://github.com/vim-scripts/php.vim--Garvin.git'
-Plugin 'https://github.com/sumpygump/php-documentor-vim.git'
-Plugin 'https://github.com/scrooloose/syntastic.git'
-Plugin 'https://github.com/bling/vim-airline.git'
-Plugin 'https://github.com/vim-airline/vim-airline-themes.git'
-Plugin 'https://github.com/tpope/vim-fugitive.git'
-Plugin 'https://github.com/cakebaker/scss-syntax.vim.git'
-Plugin 'https://github.com/scrooloose/nerdcommenter.git'
-Plugin 'https://github.com/mattn/emmet-vim.git'
+" General
+Plugin 'https://github.com/scrooloose/syntastic.git' " Syntax checker
+Plugin 'https://github.com/bling/vim-airline.git' " Status line
+Plugin 'https://github.com/vim-airline/vim-airline-themes.git' " Status line themes
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git' " File search
+Plugin 'https://github.com/unblevable/quick-scope.git' " Left right movements
+Plugin 'https://github.com/Valloric/YouCompleteMe.git' " Auto completion
+Plugin 'https://github.com/SirVer/ultisnips.git' " Snippets
+
+" GIT
+Plugin 'https://github.com/tpope/vim-fugitive.git' " GIT Wrapper
+Plugin 'https://github.com/airblade/vim-gitgutter.git' " Diff in gutter
+
+" PHP
+Plugin 'https://github.com/vim-scripts/php.vim--Garvin.git' " PHP Syntax
+Plugin 'https://github.com/sumpygump/php-documentor-vim.git' " DocComments
+Plugin 'https://github.com/joonty/vdebug.git' " Debugging
+Plugin 'https://github.com/shawncplus/phpcomplete.vim.git' " Auto completion
+
+" SCSS / LESS
+Plugin 'https://github.com/cakebaker/scss-syntax.vim.git' " SCSS Syntax
+Plugin 'https://github.com/groenewege/vim-less.git' " LESS Syntax
+
+" CSS / HTML
+Plugin 'https://github.com/mattn/emmet-vim.git' " CSS/HTML auto completion
+
+" Color schemes
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
-Plugin 'https://github.com/joonty/vdebug.git'
-Plugin 'https://github.com/airblade/vim-gitgutter.git'
-Plugin 'https://github.com/groenewege/vim-less.git'
+Plugin 'https://github.com/morhetz/gruvbox.git'
+
+" Arduino
 Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plugin 'https://github.com/unblevable/quick-scope.git'
-Plugin 'https://github.com/Shougo/vimproc.vim.git'
-Plugin 'https://github.com/m2mdas/phpcomplete-extended.git'
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
-Plugin 'https://github.com/elixir-lang/vim-elixir.git'
-Plugin 'https://github.com/SirVer/ultisnips.git'
+
+" Typescript
 Plugin 'https://github.com/leafgarland/typescript-vim.git'
 
 call vundle#end()
@@ -42,7 +55,7 @@ filetype plugin on
 
 " Set color scheme
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " Enable syntax highlighting
 syntax on
@@ -140,17 +153,6 @@ set scrolloff=3
 " Use xmllint to auto indent xml files http://goo.gl/N8wrXh
 au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
-" Dont replace the paste buffer on paste
-function! RestoreRegister()
-    let @" = s:restore_reg
-    return ''
-endfunction
-function! s:Repl()
-    let s:restore_reg = @"
-    return "p@=RestoreRegister()\<cr>"
-endfunction
-vmap <silent> <expr> p <sid>Repl()
-
 " Open Quickfix window after grep and close it after file is selcted
 autocmd QuickFixCmdPost *grep* cwindow
 autocmd FileType qf nmap <buffer> <CR> <CR> :ccl <CR>
@@ -187,7 +189,7 @@ vnoremap <C-D> :call PhpDocRange()<CR>
 let g:pdv_cfg_Package = ""
 let g:pdv_cfg_Version = ""
 let g:pdv_cfg_Author = "Michael Thessel"
-let g:pdv_cfg_Copyright = "2013"
+let g:pdv_cfg_Copyright = "2016"
 let g:pdv_cfg_License = ""
 
 " Syntastic
@@ -215,16 +217,12 @@ highlight clear SignColumn
 imap <leader>e <C-y>,
 let g:user_emmet_leader_key='<leader>e'
 
-" Fugitive
-map <leader>t :NERDTreeToggle <CR>
-
 " CtrlP
 map <leader>p :CtrlP<CR>
 let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 "Quick Scope
-
 function! Quick_scope_selective(movement)
     let needs_disabling = 0
     if !g:qs_enable
@@ -254,7 +252,7 @@ vnoremap <expr> <silent> t Quick_scope_selective('t')
 vnoremap <expr> <silent> T Quick_scope_selective('T')
 
 " Phpcomplete
-autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<leader><space>"
