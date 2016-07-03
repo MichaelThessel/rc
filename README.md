@@ -6,7 +6,7 @@ cd ~/.rc
 git submodule init
 git submodule update
 cd ~
-ln -s .rc/.bashgit .rc/.bashrc .rc/.gitconfig .rc/.gitignore .rc/.profile .rc/.screenrc .rc/.vim .rc/.vimrc ~/
+ln -s .rc/.bashgit .rc/.bashrc .rc/.gitconfig .rc/.gitignore .rc/.profile .rc/.screenrc .rc/.vim .rc/.vimrc .rc/.inputrc ~/
 vim +PluginInstall +qall
 ```
 
