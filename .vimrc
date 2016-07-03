@@ -122,10 +122,10 @@ set noswapfile
 set nowrap
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
-highlight Linelength ctermbg=235 guibg=235
-au BufWinEnter * 2match Linelength /\%81v.\+/
 highlight Spacing ctermbg=darkred ctermfg=white
 au BufWinEnter * match Spacing /\s\+$/
+set textwidth=80
+set colorcolumn=+1
 
 " Highlight tab characters
 set list
@@ -259,3 +259,9 @@ let g:UltiSnipsExpandTrigger="<leader><space>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
+
+"YouCompleteMe
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_auto_trigger = 1
