@@ -43,6 +43,9 @@ Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
 " Typescript
 Plugin 'https://github.com/leafgarland/typescript-vim.git'
 
+"GO
+Plugin 'https://github.com/fatih/vim-go.git'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -92,6 +95,7 @@ au BufNewFile,BufReadPre *.scss setlocal filetype=scss shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.css setlocal filetype=css shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.xml setlocal filetype=xml shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.twig setlocal filetype=html shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre *.go setlocal filetype=go tabstop=4 expandtab! nolist
 
 " Always show the status line
 set laststatus=2
@@ -266,3 +270,19 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_auto_trigger = 1
+
+"Vim-Go
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+au FileType go nmap <Leader>gov <Plug>(go-def-vertical)
+au FileType go nmap <Leader>godv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>goi <Plug>(go-info)
