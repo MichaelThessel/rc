@@ -286,3 +286,8 @@ let g:go_highlight_build_constraints = 1
 au FileType go nmap <Leader>gov <Plug>(go-def-vertical)
 au FileType go nmap <Leader>godv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>goi <Plug>(go-info)
+
+au FileType go nmap <leader>gor <Plug>(go-run)
+au FileType go nmap <leader>gob <Plug>(go-build)
+au FileType go nmap <leader>got <Plug>(go-test)
+au FileType go nmap <leader>goc <Plug>(go-coverage)
