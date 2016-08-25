@@ -43,6 +43,9 @@ Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
 " Typescript
 Plugin 'https://github.com/leafgarland/typescript-vim.git'
 
+" Javascript
+Plugin 'https://github.com/pangloss/vim-javascript.git'
+
 "GO
 Plugin 'https://github.com/fatih/vim-go.git'
 
