@@ -7,6 +7,7 @@ export HISTCONTROL=ignoredups
 # Aliases
 alias grep='grep -s'
 alias phpgrep='grep --include="*.php"'
+alias vi='vim'
 
 # Bash prompt with git status info
 source ~/.bashgit
