@@ -5,3 +5,4 @@
 .vim/bundle
 .phpcomplete_extended
 .tags*
+.vim/__pycache__
