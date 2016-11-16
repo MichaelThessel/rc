@@ -248,7 +248,7 @@ function! Quick_scope_selective(movement)
     return a:movement . letter
 endfunction
 
-let g:qs_enable = 0
+let g:qs_enable = 1
 
 nnoremap <expr> <silent> f Quick_scope_selective('f')
 nnoremap <expr> <silent> F Quick_scope_selective('F')
