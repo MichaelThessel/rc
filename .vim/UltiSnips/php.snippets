@@ -17,6 +17,11 @@ snippet vdf
 error_log(print_r($1, true), 3, '/tmp/debug.log');
 endsnippet
 
+snippet pf
+$start = microtime(true);
+error_log(print_r(sprintf("%.4f \n", microtime(true) - $start), true), 3, '/tmp/debug.log');
+endsnippet
+
 ##############################
 # Functions, methods classes #
 ##############################
