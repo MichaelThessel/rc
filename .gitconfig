@@ -27,6 +27,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	filemode = false
+	editor = vim
 [credential]
 	helper = cache --timeout=86400
 [http]
