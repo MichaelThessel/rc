@@ -34,8 +34,8 @@ Plugin 'https://github.com/groenewege/vim-less.git' " LESS Syntax
 Plugin 'https://github.com/mattn/emmet-vim.git' " CSS/HTML auto completion
 
 " Markdown
-Plugin 'https://github.com/godlygeek/tabular' " plasticboy/vim-markdown dependency
-Plugin 'https://github.com/plasticboy/vim-markdown'
+Plugin 'https://github.com/godlygeek/tabular.git' " plasticboy/vim-markdown dependency
+Plugin 'https://github.com/plasticboy/vim-markdown.git'
 
 " Color schemes
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
@@ -52,6 +52,9 @@ Plugin 'https://github.com/pangloss/vim-javascript.git'
 
 "GO
 Plugin 'https://github.com/fatih/vim-go.git'
+
+"VimWiki
+Plugin 'https://github.com/vimwiki/vimwiki.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -298,3 +301,7 @@ au FileType go nmap <leader>gor <Plug>(go-run)
 au FileType go nmap <leader>gob <Plug>(go-build)
 au FileType go nmap <leader>got <Plug>(go-test)
 au FileType go nmap <leader>goc <Plug>(go-coverage)
+
+"VimWiki
+let g:vimwiki_list = [{'path':'/data/thesi/wiki', 'path_html':'~/.wiki/'}]
+nmap <leader>wwc :VimwikiAll2HTML<CR>
