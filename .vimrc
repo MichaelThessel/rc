@@ -33,6 +33,10 @@ Plugin 'https://github.com/groenewege/vim-less.git' " LESS Syntax
 " CSS / HTML
 Plugin 'https://github.com/mattn/emmet-vim.git' " CSS/HTML auto completion
 
+" Markdown
+Plugin 'https://github.com/godlygeek/tabular' " plasticboy/vim-markdown dependency
+Plugin 'https://github.com/plasticboy/vim-markdown'
+
 " Color schemes
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/morhetz/gruvbox.git'
