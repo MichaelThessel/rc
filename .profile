@@ -2,4 +2,4 @@
 export TERM='xterm-256color'
 
 export PATH=$PATH:~/bin:~/bin/node/bin/:/usr/local/go/bin:~/go/bin
-export GOPATH=~/go/
+export GOPATH=/data/src/go
