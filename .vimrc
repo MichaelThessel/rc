@@ -303,5 +303,11 @@ au FileType go nmap <leader>got <Plug>(go-test)
 au FileType go nmap <leader>goc <Plug>(go-coverage)
 
 "VimWiki
-let g:vimwiki_list = [{'path':'/data/thesi/wiki', 'path_html':'~/.wiki/'}]
+let g:vimwiki_list = [{
+            \'path':'/data/thesi/wiki',
+            \'path_html':'~/.wiki/',
+            \'template_path':'/data/thesi/wiki/templates',
+            \'template_default':'default',
+            \'template_ext':'.html',
+            \'auto_export': 1}]
 nmap <leader>wwc :VimwikiAll2HTML<CR>
