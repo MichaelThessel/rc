@@ -15,6 +15,7 @@ Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git' " File search
 Plugin 'https://github.com/unblevable/quick-scope.git' " Left right movements
 Plugin 'https://github.com/Valloric/YouCompleteMe.git' " Auto completion
 Plugin 'https://github.com/SirVer/ultisnips.git' " Snippets
+Plugin 'https://github.com/mileszs/ack.vim.git' " ACK
 
 " GIT
 Plugin 'https://github.com/tpope/vim-fugitive.git' " GIT Wrapper
@@ -314,3 +315,8 @@ let g:vimwiki_list = [{
             \'template_ext':'.html',
             \'auto_export': 1}]
 nmap <leader>wwc :VimwikiAll2HTML<CR>
+
+"Ack/Ag
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
