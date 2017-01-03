@@ -53,6 +53,9 @@ Plugin 'https://github.com/pangloss/vim-javascript.git'
 "GO
 Plugin 'https://github.com/fatih/vim-go.git'
 
+" Octave
+Plugin 'https://github.com/jvirtanen/vim-octave.git'
+
 "VimWiki
 Plugin 'https://github.com/vimwiki/vimwiki.git'
 
