@@ -164,10 +164,6 @@ set scrolloff=3
 " Use xmllint to auto indent xml files http://goo.gl/N8wrXh
 au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
-" Open Quickfix window after grep and close it after file is selcted
-autocmd QuickFixCmdPost *grep* cwindow
-autocmd FileType qf nmap <buffer> <CR> <CR> :ccl <CR>
-
 " ###########################################
 " ############# Key Mappings ################
 " ###########################################
