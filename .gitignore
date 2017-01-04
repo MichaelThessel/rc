@@ -4,5 +4,5 @@
 .vim/.netrwhist
 .vim/bundle
 .phpcomplete_extended
-.tags*
+tags*
 .vim/__pycache__

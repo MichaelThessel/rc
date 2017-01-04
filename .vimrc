@@ -11,8 +11,10 @@ Plugin 'gmarik/Vundle'
 Plugin 'https://github.com/scrooloose/syntastic.git' " Syntax checker
 Plugin 'https://github.com/bling/vim-airline.git' " Status line
 Plugin 'https://github.com/vim-airline/vim-airline-themes.git' " Status line themes
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git' " File search
 Plugin 'https://github.com/unblevable/quick-scope.git' " Left right movements
+Plugin 'https://github.com/Valloric/YouCompleteMe.git' " Auto completion
+Plugin 'https://github.com/xolox/vim-easytags.git' " Automatic ctags generation
+Plugin 'https://github.com/xolox/vim-misc.git' " Easytags dependency
 Plugin 'https://github.com/SirVer/ultisnips.git' " Snippets
 Plugin 'https://github.com/mileszs/ack.vim.git' " ACK
 
@@ -267,6 +269,13 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_auto_trigger = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+"Easytags
+let g:easytags_async = 1
+let g:easytags_auto_highlight = 0
+set tags=./tags;
+let g:easytags_dynamic_files = 1
 
 "Vim-Go
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
