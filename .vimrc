@@ -13,7 +13,6 @@ Plugin 'https://github.com/bling/vim-airline.git' " Status line
 Plugin 'https://github.com/vim-airline/vim-airline-themes.git' " Status line themes
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git' " File search
 Plugin 'https://github.com/unblevable/quick-scope.git' " Left right movements
-Plugin 'https://github.com/Valloric/YouCompleteMe.git' " Auto completion
 Plugin 'https://github.com/SirVer/ultisnips.git' " Snippets
 Plugin 'https://github.com/mileszs/ack.vim.git' " ACK
 
@@ -39,14 +38,7 @@ Plugin 'https://github.com/godlygeek/tabular.git' " plasticboy/vim-markdown depe
 Plugin 'https://github.com/plasticboy/vim-markdown.git'
 
 " Color schemes
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/morhetz/gruvbox.git'
-
-" Arduino
-Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
-
-" Typescript
-Plugin 'https://github.com/leafgarland/typescript-vim.git'
 
 " Javascript
 Plugin 'https://github.com/pangloss/vim-javascript.git'
@@ -235,11 +227,6 @@ highlight clear SignColumn
 " Emmet plugin
 imap <leader>e <C-y>,
 let g:user_emmet_leader_key='<leader>e'
-
-" CtrlP
-map <leader>p :CtrlP<CR>
-let g:ctrlp_working_path_mode = 'rw'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 "Quick Scope
 function! Quick_scope_selective(movement)
