@@ -10,7 +10,6 @@ Plugin 'gmarik/Vundle'
 " General
 Plugin 'https://github.com/w0rp/ale.git' " Syntax checker
 Plugin 'https://github.com/bling/vim-airline.git' " Status line
-Plugin 'https://github.com/vim-airline/vim-airline-themes.git' " Status line themes
 Plugin 'https://github.com/unblevable/quick-scope.git' " Left right movements
 Plugin 'https://github.com/Valloric/YouCompleteMe.git' " Auto completion
 Plugin 'https://github.com/xolox/vim-easytags.git' " Automatic ctags generation
