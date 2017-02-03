@@ -17,6 +17,7 @@ Plugin 'https://github.com/xolox/vim-easytags.git' " Automatic ctags generation
 Plugin 'https://github.com/xolox/vim-misc.git' " Easytags dependency
 Plugin 'https://github.com/SirVer/ultisnips.git' " Snippets
 Plugin 'https://github.com/mileszs/ack.vim.git' " ACK
+Plugin 'https://github.com/tpope/vim-surround.git' " Surround
 
 " GIT
 Plugin 'https://github.com/tpope/vim-fugitive.git' " GIT Wrapper
@@ -306,7 +307,9 @@ let g:vimwiki_list = [{
             \'template_default':'default',
             \'template_ext':'.html',
             \'auto_export': 1}]
+let g:vimwiki_text_ignore_newline = 0
 nmap <leader>wwc :VimwikiAll2HTML<CR>
+au BufNewFile,BufReadPre *.wiki setlocal textwidth=0 wrapmargin=0 wrap
 
 "Ack/Ag
 if executable('ag')
