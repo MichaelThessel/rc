@@ -8,7 +8,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle'
 
 " General
-Plugin 'https://github.com/scrooloose/syntastic.git' " Syntax checker
+Plugin 'https://github.com/w0rp/ale.git' " Syntax checker
 Plugin 'https://github.com/bling/vim-airline.git' " Status line
 Plugin 'https://github.com/vim-airline/vim-airline-themes.git' " Status line themes
 Plugin 'https://github.com/unblevable/quick-scope.git' " Left right movements
@@ -202,15 +202,13 @@ let g:pdv_cfg_Author = "Michael Thessel"
 let g:pdv_cfg_Copyright = "2016"
 let g:pdv_cfg_License = ""
 
-" Syntastic
-nmap <leader>s :w <CR> :SyntasticCheck <CR>
-let g:syntastic_php_checkers=['php']
-let g:syntastic_css_checkers=[]
-let g:syntastic_javascript_checkers = ['jshint']
-
 " Airline
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
 
 " Fugitive
 nmap <leader>gd :Gdiff<CR>
