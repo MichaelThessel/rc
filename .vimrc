@@ -1,4 +1,3 @@
-
 " ##########################################
 " ############# Vundle Settings ############
 " ##########################################
@@ -107,16 +106,6 @@ au BufNewFile,BufReadPre *.go setlocal filetype=go tabstop=4 expandtab! nolist
 
 " Always show the status line
 set laststatus=2
-
-" Statusline
-set statusline=%f\                           " path
-set statusline+=%h%m%r%w                     " flags
-set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
-set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
-set statusline+=%{&fileformat}]              " file format
-set statusline+=%=                           " right align
-set statusline+=col\:\ %c\                   " Current col
-set statusline+=row\:\ %l/%L                 " Current line
 
 " Line numbers
 set number
