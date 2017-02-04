@@ -25,7 +25,6 @@ Plugin 'airblade/vim-gitgutter' " Diff in gutter
 Plugin 'vim-scripts/php.vim--Garvin' " PHP Syntax
 Plugin 'sumpygump/php-documentor-vim' " DocComments
 Plugin 'joonty/vdebug' " Debugging
-Plugin 'shawncplus/phpcomplete.vim' " Auto completion
 
 " SCSS / LESS
 Plugin 'cakebaker/scss-syntax.vim' " SCSS Syntax
@@ -241,9 +240,6 @@ vnoremap <expr> <silent> f Quick_scope_selective('f')
 vnoremap <expr> <silent> F Quick_scope_selective('F')
 vnoremap <expr> <silent> t Quick_scope_selective('t')
 vnoremap <expr> <silent> T Quick_scope_selective('T')
-
-" Phpcomplete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<leader><space>"
