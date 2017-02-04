@@ -8,51 +8,51 @@ call vundle#begin()
 Plugin 'gmarik/Vundle'
 
 " General
-Plugin 'https://github.com/w0rp/ale.git' " Syntax checker
-Plugin 'https://github.com/bling/vim-airline.git' " Status line
-Plugin 'https://github.com/unblevable/quick-scope.git' " Left right movements
-Plugin 'https://github.com/Valloric/YouCompleteMe.git' " Auto completion
-Plugin 'https://github.com/xolox/vim-easytags.git' " Automatic ctags generation
-Plugin 'https://github.com/xolox/vim-misc.git' " Easytags dependency
-Plugin 'https://github.com/SirVer/ultisnips.git' " Snippets
-Plugin 'https://github.com/mileszs/ack.vim.git' " ACK
-Plugin 'https://github.com/tpope/vim-surround.git' " Surround
+Plugin 'w0rp/ale' " Syntax checker
+Plugin 'bling/vim-airline' " Status line
+Plugin 'unblevable/quick-scope' " Left right movements
+Plugin 'Valloric/YouCompleteMe' " Auto completion
+Plugin 'xolox/vim-easytags' " Automatic ctags generation
+Plugin 'xolox/vim-misc' " Easytags dependency
+Plugin 'SirVer/ultisnips' " Snippets
+Plugin 'mileszs/ack.vim' " ACK
+Plugin 'tpope/vim-surround' " Surround
 
 " GIT
-Plugin 'https://github.com/tpope/vim-fugitive.git' " GIT Wrapper
-Plugin 'https://github.com/airblade/vim-gitgutter.git' " Diff in gutter
+Plugin 'tpope/vim-fugitive' " GIT Wrapper
+Plugin 'airblade/vim-gitgutter' " Diff in gutter
 
 " PHP
-Plugin 'https://github.com/vim-scripts/php.vim--Garvin.git' " PHP Syntax
-Plugin 'https://github.com/sumpygump/php-documentor-vim.git' " DocComments
-Plugin 'https://github.com/joonty/vdebug.git' " Debugging
-Plugin 'https://github.com/shawncplus/phpcomplete.vim.git' " Auto completion
+Plugin 'vim-scripts/php.vim--Garvin' " PHP Syntax
+Plugin 'sumpygump/php-documentor-vim' " DocComments
+Plugin 'joonty/vdebug' " Debugging
+Plugin 'shawncplus/phpcomplete.vim' " Auto completion
 
 " SCSS / LESS
-Plugin 'https://github.com/cakebaker/scss-syntax.vim.git' " SCSS Syntax
-Plugin 'https://github.com/groenewege/vim-less.git' " LESS Syntax
+Plugin 'cakebaker/scss-syntax.vim' " SCSS Syntax
+Plugin 'groenewege/vim-less' " LESS Syntax
 
 " CSS / HTML
-Plugin 'https://github.com/mattn/emmet-vim.git' " CSS/HTML auto completion
+Plugin 'mattn/emmet-vim' " CSS/HTML auto completion
 
 " Markdown
-Plugin 'https://github.com/godlygeek/tabular.git' " plasticboy/vim-markdown dependency
-Plugin 'https://github.com/plasticboy/vim-markdown.git'
+Plugin 'godlygeek/tabular' " plasticboy/vim-markdown dependency
+Plugin 'plasticboy/vim-markdown'
 
 " Color schemes
-Plugin 'https://github.com/morhetz/gruvbox.git'
+Plugin 'morhetz/gruvbox'
 
 " Javascript
-Plugin 'https://github.com/pangloss/vim-javascript.git'
+Plugin 'pangloss/vim-javascript'
 
 "GO
-Plugin 'https://github.com/fatih/vim-go.git'
+Plugin 'fatih/vim-go'
 
 " Octave
-Plugin 'https://github.com/jvirtanen/vim-octave.git'
+Plugin 'jvirtanen/vim-octave'
 
 "VimWiki
-Plugin 'https://github.com/vimwiki/vimwiki.git'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 filetype plugin indent on
