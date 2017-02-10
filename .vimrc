@@ -102,6 +102,9 @@ au BufNewFile,BufReadPre *.css setlocal filetype=css shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.xml setlocal filetype=xml shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.twig setlocal filetype=html shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.go setlocal filetype=go tabstop=4 expandtab! nolist
+au BufNewFile,BufReadPre *.wiki setlocal spell wrap
+au BufNewFile,BufReadPre *.txt setlocal spell wrap
+au BufNewFile,BufReadPre *.md setlocal spell wrap
 
 " Always show the status line
 set laststatus=2

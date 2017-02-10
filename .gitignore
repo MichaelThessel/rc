@@ -6,3 +6,4 @@
 .phpcomplete_extended
 tags*
 .vim/__pycache__
+.vim/spell
