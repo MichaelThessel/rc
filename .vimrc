@@ -207,6 +207,7 @@ nmap <leader>gb :Gblame<CR>
 nmap <leader>gc :Gread<CR>
 nmap <leader>gg :Ggrep! <C-R><C-W><CR><CR>
 nmap <leader>g> :diffget<CR>
+autocmd QuickFixCmdPost *grep* cwindow
 
 " GITGutter
 highlight clear SignColumn
