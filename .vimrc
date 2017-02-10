@@ -16,6 +16,7 @@ Plugin 'xolox/vim-misc' " Easytags dependency
 Plugin 'SirVer/ultisnips' " Snippets
 Plugin 'mileszs/ack.vim' " ACK
 Plugin 'tpope/vim-surround' " Surround
+Plugin 'tpope/vim-unimpaired' " Extra mappings
 
 " GIT
 Plugin 'tpope/vim-fugitive' " GIT Wrapper
