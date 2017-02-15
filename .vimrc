@@ -53,6 +53,9 @@ Plugin 'jvirtanen/vim-octave'
 "VimWiki
 Plugin 'vimwiki/vimwiki'
 
+"GDB
+Plugin 'vim-scripts/Conque-GDB'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -162,12 +165,12 @@ au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/
 " ############# Key Mappings ################
 " ###########################################
 
-"  General mappings
+" General mappings
 set pastetoggle=<leader>i
 nmap <leader>w :set wrap <CR>
 nmap <leader>W :set nowrap <CR>
-nmap <leader>c :set wrap <CR> :set norelativenumber <CR> :set nonumber <CR> :set nolist <CR> :GitGutterDisable <CR> " Copy mode
-vmap <leader>w :s/\s\+$//g <CR> :%s/[^ ]\zs  \+/ /g <CR> " Whitepsace cleanup
+nmap <leader>C :set wrap <CR> :set norelativenumber <CR> :set nonumber <CR> :set nolist <CR> :GitGutterDisable <CR> " Copy mode
+vmap <leader>w :s/\s\+$//g <CR> :%s/[^ ]\zs \+/ /g <CR> " Whitepsace cleanup
 nmap <leader><tab> :bn<CR>
 nmap <leader><s-tab> :bp<CR>
 nmap <leader>bd :bdelete<CR>
@@ -302,3 +305,26 @@ au BufNewFile,BufReadPre *.wiki setlocal textwidth=0 wrapmargin=0 wrap
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
+
+"GDB
+let g:ConqueTerm_Color = 2
+let g:ConqueTerm_CloseOnEnd = 1
+let g:ConqueTerm_StartMessages = 0
+
+function DebugSession()
+    silent make -o vimgdb -gcflags "-N -l"
+    redraw!
+    if (filereadable("vimgdb"))
+        ConqueGdb vimgdb
+    else
+        echom "Couldn't find debug file"
+    endif
+endfunction
+function DebugSessionCleanup(term)
+    if (filereadable("vimgdb"))
+        let ds=delete("vimgdb")
+    endif
+endfunction
+call conque_term#register_function("after_close", "DebugSessionCleanup")
+nmap <leader>d :call DebugSession()<CR>
+
