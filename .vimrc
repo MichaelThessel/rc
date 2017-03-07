@@ -10,13 +10,12 @@ Plugin 'gmarik/Vundle'
 Plugin 'w0rp/ale' " Syntax checker
 Plugin 'bling/vim-airline' " Status line
 Plugin 'unblevable/quick-scope' " Left right movements
-Plugin 'Valloric/YouCompleteMe' " Auto completion
-Plugin 'xolox/vim-easytags' " Automatic ctags generation
-Plugin 'xolox/vim-misc' " Easytags dependency
 Plugin 'SirVer/ultisnips' " Snippets
 Plugin 'mileszs/ack.vim' " ACK
 Plugin 'tpope/vim-surround' " Surround
 Plugin 'tpope/vim-unimpaired' " Extra mappings
+Plugin 'ludovicchabant/vim-gutentags' " Ctags generation
+Plugin 'ajh17/VimCompletesMe' " Auto completion
 
 " GIT
 Plugin 'tpope/vim-fugitive' " GIT Wrapper
@@ -255,23 +254,11 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 
-"YouCompleteMe
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_auto_trigger = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-
-"Easytags
-let g:easytags_async = 1
-let g:easytags_auto_highlight = 0
-set tags=./tags;
-let g:easytags_dynamic_files = 1
-
 "Vim-Go
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
