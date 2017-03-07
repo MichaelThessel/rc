@@ -1,5 +1,5 @@
 export TERM='xterm-256color'
-export PATH=$PATH:~/bin:~/bin/node/bin/:/usr/local/go/bin:~/go/bin:/data/src/go/bin
+export PATH=$PATH:~/bin:~/bin/node/bin/:~/go/bin:/data/src/go/bin
 export GOPATH=/data/src/go
 export VISUAL="vim"
 
