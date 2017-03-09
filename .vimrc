@@ -15,7 +15,7 @@ Plugin 'mileszs/ack.vim' " ACK
 Plugin 'tpope/vim-surround' " Surround
 Plugin 'tpope/vim-unimpaired' " Extra mappings
 Plugin 'ludovicchabant/vim-gutentags' " Ctags generation
-Plugin 'ajh17/VimCompletesMe' " Auto completion
+Plugin 'Valloric/YouCompleteMe' " Auto completion
 
 " GIT
 Plugin 'tpope/vim-fugitive' " GIT Wrapper
@@ -316,3 +316,6 @@ endfunction
 call conque_term#register_function("after_close", "DebugSessionCleanup")
 nmap <leader>d :call DebugSession()<CR>
 
+"YouCompleteMe
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_autoclose_preview_window_after_insertion = 1
