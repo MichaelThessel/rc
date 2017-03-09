@@ -25,6 +25,7 @@ Plugin 'airblade/vim-gitgutter' " Diff in gutter
 Plugin 'vim-scripts/php.vim--Garvin' " PHP Syntax
 Plugin 'sumpygump/php-documentor-vim' " DocComments
 Plugin 'joonty/vdebug' " Debugging
+Plugin 'shawncplus/phpcomplete.vim' " Omni complete
 
 " SCSS / LESS
 Plugin 'cakebaker/scss-syntax.vim' " SCSS Syntax
