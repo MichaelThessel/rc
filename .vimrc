@@ -115,7 +115,6 @@ set laststatus=2
 
 " Line numbers
 set number
-set relativenumber
 
 " Don't redraw while executing macros
 set lazyredraw
