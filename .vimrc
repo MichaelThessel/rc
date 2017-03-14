@@ -221,9 +221,7 @@ imap <leader>e <C-y>,
 let g:user_emmet_leader_key='<leader>e'
 
 "Quick Scope
-let g:qs_highlight_on_keys = ['f', 'F']
-let g:qs_first_occurrence_highlight_color = 155
-let g:qs_second_occurrence_highlight_color = 81
+let g:qs_highlight_on_keys = []
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<leader><space>"
