@@ -268,7 +268,7 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-au FileType go nmap <Leader>gov <Plug>(go-def-vertical)
+au FileType go nmap <Leader>god <Plug>(go-def-vertical)
 au FileType go nmap <Leader>godv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>goi <Plug>(go-info)
 
