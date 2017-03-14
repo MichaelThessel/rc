@@ -131,10 +131,11 @@ set noswapfile
 set nowrap
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
-highlight Spacing ctermbg=darkred ctermfg=white
+highlight Spacing ctermbg=167 ctermfg=white
 au BufWinEnter * match Spacing /\s\+$/
 set textwidth=80
 set colorcolumn=+1
+highlight ColorColumn ctermbg=235
 
 " Highlight tab characters
 set list
