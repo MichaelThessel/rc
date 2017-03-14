@@ -198,12 +198,14 @@ let g:pdv_cfg_Copyright = "2016"
 let g:pdv_cfg_License = ""
 
 " Airline
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_right_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_left_alt_sep= ''
 let g:airline_left_sep = ''
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
 
 " Fugitive
 nmap <leader>gd :Gdiff<CR>
