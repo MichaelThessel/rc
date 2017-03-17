@@ -44,7 +44,7 @@ Plugin 'morhetz/gruvbox'
 " Javascript
 Plugin 'pangloss/vim-javascript'
 
-"GO
+"Go
 Plugin 'fatih/vim-go'
 
 " Octave
@@ -295,5 +295,5 @@ call conque_term#register_function("after_close", "DebugSessionCleanup")
 nmap <leader>d :call DebugSession()<CR>
 
 "YouCompleteMe
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
