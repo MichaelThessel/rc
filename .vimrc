@@ -67,6 +67,7 @@ filetype plugin indent on
 filetype plugin on
 
 " Set color scheme
+set termguicolors
 set background=dark
 colorscheme gruvbox
 let g:gruvbox_invert_selection = 0
@@ -234,7 +235,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 
 "Vim-Go
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['metalinter']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
