@@ -136,7 +136,7 @@ highlight Spacing ctermbg=167 ctermfg=white
 au BufWinEnter * match Spacing /\s\+$/
 set textwidth=80
 set colorcolumn=+1
-highlight ColorColumn ctermbg=235 guibg=gray13
+highlight ColorColumn ctermbg=235 guibg=gray14
 
 " Highlight tab characters
 set list
