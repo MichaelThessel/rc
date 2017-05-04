@@ -7,51 +7,18 @@ call vundle#begin()
 Plugin 'gmarik/Vundle'
 
 " General
-Plugin 'w0rp/ale' " Syntax checker
 Plugin 'bling/vim-airline' " Status line
-Plugin 'unblevable/quick-scope' " Left right movements
-Plugin 'SirVer/ultisnips' " Snippets
 Plugin 'mileszs/ack.vim' " ACK
-Plugin 'tpope/vim-surround' " Surround
-Plugin 'tpope/vim-unimpaired' " Extra mappings
-Plugin 'ludovicchabant/vim-gutentags' " Ctags generation
-Plugin 'Valloric/YouCompleteMe' " Auto completion
 
 " GIT
 Plugin 'tpope/vim-fugitive' " GIT Wrapper
 Plugin 'airblade/vim-gitgutter' " Diff in gutter
 
-" PHP
-Plugin 'vim-scripts/php.vim--Garvin' " PHP Syntax
-Plugin 'sumpygump/php-documentor-vim' " DocComments
-Plugin 'joonty/vdebug' " Debugging
-Plugin 'shawncplus/phpcomplete.vim' " Omni complete
-
-" SCSS / LESS
-Plugin 'cakebaker/scss-syntax.vim' " SCSS Syntax
-Plugin 'groenewege/vim-less' " LESS Syntax
-
-" CSS / HTML
-Plugin 'mattn/emmet-vim' " CSS/HTML auto completion
-
-" Markdown
-Plugin 'godlygeek/tabular' " plasticboy/vim-markdown dependency
-Plugin 'plasticboy/vim-markdown'
-
 " Color schemes
 Plugin 'morhetz/gruvbox'
 
-" Javascript
-Plugin 'pangloss/vim-javascript'
-
 "Go
 Plugin 'fatih/vim-go'
-
-" Octave
-Plugin 'jvirtanen/vim-octave'
-
-"VimWiki
-Plugin 'vimwiki/vimwiki'
 
 "GDB
 Plugin 'vim-scripts/Conque-GDB'
@@ -98,20 +65,7 @@ set shiftwidth=4
 set tabstop=4
 
 " Tabs & Spaces for specific file formats
-au BufNewFile,BufReadPre *.html setlocal shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.phtml setlocal filetype=html shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.tpl setlocal filetype=html shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.tpl.php setlocal filetype=html shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.js setlocal filetype=javascript shiftwidth=4 tabstop=4
-au BufNewFile,BufReadPre *.less setlocal filetype=less shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.scss setlocal filetype=scss shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.css setlocal filetype=css shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.xml setlocal filetype=xml shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.twig setlocal filetype=html shiftwidth=2 tabstop=2
 au BufNewFile,BufReadPre *.go setlocal filetype=go tabstop=4 expandtab! nolist
-au BufNewFile,BufReadPre *.wiki setlocal spell wrap
-au BufNewFile,BufReadPre *.txt setlocal spell wrap
-au BufNewFile,BufReadPre *.md setlocal spell wrap
 
 " Always show the status line
 set laststatus=2
@@ -173,11 +127,9 @@ set pastetoggle=<leader>i
 nmap <leader>w :set wrap <CR>
 nmap <leader>W :set nowrap <CR>
 nmap <leader>C :set wrap <CR> :set norelativenumber <CR> :set nonumber <CR> :set nolist <CR> :GitGutterDisable <CR> " Copy mode
-vmap <leader>w :s/\s\+$//g <CR> :%s/[^ ]\zs \+/ /g <CR> " Whitepsace cleanup
 nmap <leader><tab> :bn<CR>
 nmap <leader><s-tab> :bp<CR>
 nmap <leader>bd :bdelete<CR>
-nmap <leader>v `[v`] " Select pasted text
 imap jj <ESC>
 
 " Disable help key
@@ -188,16 +140,6 @@ vnoremap <F1> <ESC>
 " ##############################################
 " ############# Plugin Settings ################
 " ##############################################
-
-" PHP Documentor
-inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-D> :call PhpDocSingle()<CR>
-vnoremap <C-D> :call PhpDocRange()<CR>
-let g:pdv_cfg_Package = ""
-let g:pdv_cfg_Version = ""
-let g:pdv_cfg_Author = "Michael Thessel"
-let g:pdv_cfg_Copyright = "2016"
-let g:pdv_cfg_License = ""
 
 " Airline
 let g:airline_right_alt_sep = ''
@@ -221,19 +163,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 " GITGutter
 highlight clear SignColumn
 
-" Emmet plugin
-imap <leader>e <C-y>,
-let g:user_emmet_leader_key='<leader>e'
-
-"Quick Scope
-let g:qs_highlight_on_keys = []
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<leader><space>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsEditSplit="vertical"
-
 "Vim-Go
 let g:syntastic_go_checkers = ['metalinter']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -255,18 +184,6 @@ au FileType go nmap <leader>gor <Plug>(go-run)
 au FileType go nmap <leader>gob <Plug>(go-build)
 au FileType go nmap <leader>got <Plug>(go-test)
 au FileType go nmap <leader>goc <Plug>(go-coverage)
-
-"VimWiki
-let g:vimwiki_list = [{
-            \'path':'/data/thesi/wiki',
-            \'path_html':'~/.wiki/',
-            \'template_path':'/data/thesi/wiki/templates',
-            \'template_default':'default',
-            \'template_ext':'.html',
-            \'auto_export': 1}]
-let g:vimwiki_text_ignore_newline = 0
-nmap <leader>wwc :VimwikiAll2HTML<CR>
-au BufNewFile,BufReadPre *.wiki setlocal textwidth=0 wrapmargin=0 wrap
 
 "Ack/Ag
 if executable('ag')
@@ -294,7 +211,3 @@ function DebugSessionCleanup(term)
 endfunction
 call conque_term#register_function("after_close", "DebugSessionCleanup")
 nmap <leader>d :call DebugSession()<CR>
-
-"YouCompleteMe
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
