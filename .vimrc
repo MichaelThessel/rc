@@ -66,6 +66,9 @@ filetype plugin indent on
 " Enable filtype plugins
 filetype plugin on
 
+" Set encoding to UTF-8
+set encoding=utf-8
+
 " Set color scheme
 set termguicolors
 set background=dark
@@ -130,9 +133,10 @@ set noswapfile
 
 " Don't wrap lines
 set nowrap
+set formatoptions-=t
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
-highlight Spacing ctermbg=167 ctermfg=white
+highlight Spacing ctermbg=167 ctermfg=white guibg=orange
 au BufWinEnter * match Spacing /\s\+$/
 set textwidth=80
 set colorcolumn=+1
@@ -235,7 +239,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 
 "Vim-Go
-let g:syntastic_go_checkers = ['metalinter']
+let g:syntastic_go_checkers = ['gometalinter']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
@@ -279,7 +283,7 @@ let g:ConqueTerm_CloseOnEnd = 1
 let g:ConqueTerm_StartMessages = 0
 
 function DebugSession()
-    silent make -o vimgdb -gcflags "-N -l"
+    silent !go build -o vimgdb -gcflags "-N -l"
     redraw!
     if (filereadable("vimgdb"))
         ConqueGdb vimgdb
