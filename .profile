@@ -1,6 +1,6 @@
 export TERM='xterm-256color'
 export PATH=$PATH:~/bin:~/bin/node/bin/:~/go/bin:/data/src/go/bin
-export GOPATH=/data/src/go
+export GOPATH=/data/src/go:./vendor
 export VISUAL="vim"
 
 alias vi="vim"
