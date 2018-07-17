@@ -53,9 +53,6 @@ Plugin 'jvirtanen/vim-octave'
 "VimWiki
 Plugin 'vimwiki/vimwiki'
 
-"GDB
-Plugin 'vim-scripts/Conque-GDB'
-
 call vundle#end()
 filetype plugin indent on
 
@@ -277,28 +274,8 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
-"GDB
-let g:ConqueTerm_Color = 2
-let g:ConqueTerm_CloseOnEnd = 1
-let g:ConqueTerm_StartMessages = 0
-
-function DebugSession()
-    silent !go build -o vimgdb -gcflags "-N -l"
-    redraw!
-    if (filereadable("vimgdb"))
-        ConqueGdb vimgdb
-    else
-        echom "Couldn't find debug file"
-    endif
-endfunction
-function DebugSessionCleanup(term)
-    if (filereadable("vimgdb"))
-        let ds=delete("vimgdb")
-    endif
-endfunction
-call conque_term#register_function("after_close", "DebugSessionCleanup")
-nmap <leader>d :call DebugSession()<CR>
-
 "YouCompleteMe
-let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
+
+"Gutentags
+let g:gutentags_ctags_executable_php = 'ctags --fields=+l'
