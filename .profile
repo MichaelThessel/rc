@@ -10,3 +10,6 @@ alias open="xdg-open"
 if [[ $TILIX_ID ]]; then
     source /etc/profile.d/vte.sh
 fi
+
+[ -e ~/.rc/.dircolors ] && eval $(dircolors -b ~/.rc/.dircolors) ||
+    eval $(dircolors -b)
