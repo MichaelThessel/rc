@@ -22,7 +22,7 @@ Plugin 'tpope/vim-fugitive' " GIT Wrapper
 Plugin 'airblade/vim-gitgutter' " Diff in gutter
 
 " PHP
-Plugin 'vim-scripts/php.vim--Garvin' " PHP Syntax
+Plugin 'StanAngeloff/php.vim' " PHP Syntax
 Plugin 'sumpygump/php-documentor-vim' " DocComments
 Plugin 'joonty/vdebug' " Debugging
 Plugin 'shawncplus/phpcomplete.vim' " Omni complete
