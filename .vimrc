@@ -98,20 +98,20 @@ set shiftwidth=4
 set tabstop=4
 
 " Tabs & Spaces for specific file formats
-au BufNewFile,BufReadPre *.html setlocal shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.phtml setlocal filetype=html shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.tpl setlocal filetype=html shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.tpl.php setlocal filetype=html shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.js setlocal filetype=javascript shiftwidth=4 tabstop=4
-au BufNewFile,BufReadPre *.less setlocal filetype=less shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.scss setlocal filetype=scss shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.css setlocal filetype=css shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.xml setlocal filetype=xml shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.twig setlocal filetype=html shiftwidth=2 tabstop=2
-au BufNewFile,BufReadPre *.go setlocal filetype=go tabstop=4 expandtab! nolist
-au BufNewFile,BufReadPre *.wiki setlocal spell wrap
-au BufNewFile,BufReadPre *.txt setlocal spell wrap
-au BufNewFile,BufReadPre *.md setlocal spell wrap
+au BufNewFile,BufReadPre,BufWinEnter *.html setlocal shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre,BufWinEnter *.phtml setlocal filetype=html.php shiftwidth=2 tabstop=2 syntax=php
+au BufNewFile,BufReadPre,BufWinEnter *.tpl setlocal filetype=html shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre,BufWinEnter *.tpl.php setlocal filetype=php.html shiftwidth=2 tabstop=2 syntax=php
+au BufNewFile,BufReadPre,BufWinEnter *.js setlocal filetype=javascript shiftwidth=4 tabstop=4
+au BufNewFile,BufReadPre,BufWinEnter *.less setlocal filetype=less shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre,BufWinEnter *.scss setlocal filetype=scss shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre,BufWinEnter *.css setlocal filetype=css shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre,BufWinEnter *.xml setlocal filetype=xml shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre,BufWinEnter *.twig setlocal filetype=html shiftwidth=2 tabstop=2
+au BufNewFile,BufReadPre,BufWinEnter *.go setlocal filetype=go tabstop=4 expandtab! nolist
+au BufNewFile,BufReadPre,BufWinEnter *.wiki setlocal spell wrap
+au BufNewFile,BufReadPre,BufWinEnter *.txt setlocal spell wrap
+au BufNewFile,BufReadPre,BufWinEnter *.md setlocal spell wrap
 
 " Always show the status line
 set laststatus=2
