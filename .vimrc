@@ -15,7 +15,11 @@ Plugin 'mileszs/ack.vim' " ACK
 Plugin 'tpope/vim-surround' " Surround
 Plugin 'tpope/vim-unimpaired' " Extra mappings
 Plugin 'ludovicchabant/vim-gutentags' " Ctags generation
-Plugin 'Valloric/YouCompleteMe' " Auto completion
+Plugin 'Shougo/deoplete.nvim' " Auto completion
+Plugin 'roxma/nvim-yarp' " Deoplete dependency
+Plugin 'roxma/vim-hug-neovim-rpc' " Deoplete dependency
+Plugin 'mdempsky/gocode', {'rtp': 'vim/'} " Deoplete go dependency
+Plugin 'zchee/deoplete-go' " Deoplete go dependency
 
 " GIT
 Plugin 'tpope/vim-fugitive' " GIT Wrapper
@@ -274,8 +278,10 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
-"YouCompleteMe
-let g:ycm_collect_identifiers_from_tags_files = 1
+"Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "Gutentags
 let g:gutentags_ctags_executable_php = 'ctags --fields=+l'
