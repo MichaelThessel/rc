@@ -146,3 +146,4 @@ for_window [title="plasma-desktop"] floating enable, border none
 #  xprop | grep "CLASS"
 assign [class="google-chrome"] 2
 assign [class="tilix"] 2
+assign [class="lollypop"] 4
