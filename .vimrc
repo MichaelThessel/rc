@@ -285,3 +285,8 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "Gutentags
 let g:gutentags_ctags_executable_php = 'ctags --fields=+l'
+
+" Markdown
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_toc_autofit = 1
+autocmd BufEnter *.md exe 'noremap <F5> :!xdg-open %:p<CR>'
