@@ -1,3 +1,15 @@
+# Gaps
+for_window [class="^.*"] border pixel 2
+new_window pixel 2
+gaps inner 6
+gaps outer 2
+
+# class                  border  backgr  text     indicator child_border
+client.focused           #7386FF #191f26 #d9d7ce  #7386FF   #7386FF
+client.focused_inactive  #14191f #191f26 #b2babd  #14191f   #14191f
+client.unfocused         #14191f #151a1f #b2babd  #14191f   #14191f
+client.urgent            #59c2ff #191f26 #ffffff  #191f26   #59c2ff
+
 # Colors
 set $black       #212121
 set $darkblack   #000000
@@ -34,7 +46,7 @@ bindsym $mod+Return exec konsole
 bindsym $mod+Shift+q kill
 
 # rofi
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Helvetica Neue 15" '
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Helvetica Neue 11" '
 
 # Change focus
 bindsym $mod+h focus left
