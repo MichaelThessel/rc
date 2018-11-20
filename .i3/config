@@ -156,6 +156,8 @@ for_window [title="plasma-desktop"] floating enable, border none
 
 # Assign applications to workspaces
 #  xprop | grep "CLASS"
+assign [class="Pidgin"] 1
+assign [class="Thunderbird"] 1
+assign [class="skype"] 1
 assign [class="google-chrome"] 2
-assign [class="tilix"] 2
 assign [class="lollypop"] 4
