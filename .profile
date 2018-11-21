@@ -14,10 +14,5 @@ alias ab="cd $GOPATH/src/github.com/MichaelThessel/ambeacon"
 alias ac="cd /data/src/ac"
 alias m2="cd /data/src/m2"
 
-# Fix for Tilix split path issue https://goo.gl/BVxY8h
-if [[ $TILIX_ID ]]; then
-    source /etc/profile.d/vte.sh
-fi
-
 [ -e ~/.rc/.dircolors ] && eval $(dircolors -b ~/.rc/.dircolors) ||
     eval $(dircolors -b)
