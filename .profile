@@ -13,6 +13,7 @@ alias alg="cd $GOPATH/src/github.com/MichaelThessel/amlanding"
 alias ab="cd $GOPATH/src/github.com/MichaelThessel/ambeacon"
 alias ac="cd /data/src/ac"
 alias m2="cd /data/src/m2"
+alias doc="cd $HOME/doc"
 
 [ -e ~/.rc/.dircolors ] && eval $(dircolors -b ~/.rc/.dircolors) ||
     eval $(dircolors -b)
