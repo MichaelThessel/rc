@@ -13,13 +13,13 @@ Plugin 'unblevable/quick-scope' " Left right movements
 Plugin 'SirVer/ultisnips' " Snippets
 Plugin 'mileszs/ack.vim' " ACK
 Plugin 'tpope/vim-surround' " Surround
-Plugin 'tpope/vim-unimpaired' " Extra mappings
 Plugin 'ludovicchabant/vim-gutentags' " Ctags generation
 Plugin 'Shougo/deoplete.nvim' " Auto completion
 Plugin 'roxma/nvim-yarp' " Deoplete dependency
 Plugin 'roxma/vim-hug-neovim-rpc' " Deoplete dependency
 Plugin 'mdempsky/gocode', {'rtp': 'vim/'} " Deoplete go dependency
 Plugin 'zchee/deoplete-go' " Deoplete go dependency
+Plugin 'ctrlpvim/ctrlp.vim' "File/buffer switching
 
 " GIT
 Plugin 'tpope/vim-fugitive' " GIT Wrapper
@@ -50,12 +50,6 @@ Plugin 'pangloss/vim-javascript'
 
 "Go
 Plugin 'fatih/vim-go'
-
-" Octave
-Plugin 'jvirtanen/vim-octave'
-
-"VimWiki
-Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 filetype plugin indent on
@@ -190,6 +184,9 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" Don't clear yank buffer on paste
+vnoremap p "_dP
+
 " ##############################################
 " ############# Plugin Settings ################
 " ##############################################
@@ -261,18 +258,6 @@ au FileType go nmap <leader>gob <Plug>(go-build)
 au FileType go nmap <leader>got <Plug>(go-test)
 au FileType go nmap <leader>goc <Plug>(go-coverage)
 
-"VimWiki
-let g:vimwiki_list = [{
-            \'path':'/data/thesi/wiki',
-            \'path_html':'~/.wiki/',
-            \'template_path':'/data/thesi/wiki/templates',
-            \'template_default':'default',
-            \'template_ext':'.html',
-            \'auto_export': 1}]
-let g:vimwiki_text_ignore_newline = 0
-nmap <leader>wwc :VimwikiAll2HTML<CR>
-au BufNewFile,BufReadPre *.wiki setlocal textwidth=0 wrapmargin=0 wrap
-
 "Ack/Ag
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
@@ -299,3 +284,9 @@ let g:gutentags_ctags_executable_php = 'ctags --fields=+l'
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_toc_autofit = 1
 autocmd BufEnter *.md exe 'noremap <F5> :!xdg-open %:p<CR>'
+
+" Ale
+let b:ale_linters = {'php': ['php']}
+
+" CtrlP
+nmap <leader>bl :CtrlPBuffer<CR>
