@@ -1,52 +1,34 @@
+##########################
+# Appearance
+##########################
+
 # Gaps
 for_window [class="^.*"] border pixel 2
 new_window pixel 2
-gaps inner 6
-gaps outer 2
+gaps inner 20
+gaps outer 0
 
-# class                  border  backgr  text     indicator child_border
+# Font for window titles
+font pango:Noto Sans, FontAwesome 9
+
+# Colors                 border  backgr  text     indicator child_border
 client.focused           #7386FF #191f26 #d9d7ce  #7386FF   #7386FF
 client.focused_inactive  #14191f #191f26 #b2babd  #14191f   #14191f
 client.unfocused         #14191f #151a1f #b2babd  #14191f   #14191f
 client.urgent            #59c2ff #191f26 #ffffff  #191f26   #59c2ff
 
-# Colors
-set $black       #212121
-set $darkblack   #000000
-set $red         #fb4934
-set $darkred     #cc241d
-set $green       #b8bb26
-set $darkgreen   #98971a
-set $yellow      #fabd2f
-set $darkyellow  #d79921
-set $blue        #83a598
-set $darkblue    #458588
-set $magenta     #d3869b
-set $darkmagenta #b16286
-set $cyan        #8ec07c
-set $darkcyan    #689d6a
-set $white       #ebdbb2
-set $darkwhite   #a89984
-set $background  #000000
-set $transparent #00000000
+##########################
+# Keys
+##########################
 
 # Define default mod button
 set $mod Mod4
 
-# Font for window titles
-font pango:Helvetica Neue, FontAwesome 10
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Start a terminal
-bindsym $mod+Return exec konsole
-
 # Kill focused window
 bindsym $mod+Shift+q kill
-
-# rofi
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Helvetica Neue 11" '
 
 # Change focus
 bindsym $mod+h focus left
@@ -108,6 +90,10 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+# Scratchpad
+bindsym $mod+Shift+y move scratchpad
+bindsym $mod+y scratchpad show
+
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -122,12 +108,14 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
+
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# Resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym h resize shrink width 10 px or 5 ppt
         bindsym j resize grow height 10 px or 5 ppt
@@ -144,15 +132,36 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Starting things with i3
-exec --no-startup-id feh --bg-center ~/Wallpapers/current.jpg
+# Multimedia buttons
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 3%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 3%+
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
 
-# Plasma Integration
-exec --no-startup-id wmctrl -c Plasma
-for_window [title="Desktop — Plasma"] kill, floating enable, border none
-for_window [class="plasmashell"] floating enable
-for_window [class="Plasma"] floating enable, border none
-for_window [title="plasma-desktop"] floating enable, border none
+##########################
+#  Bar
+##########################
+
+bar {
+    i3bar_command /usr/bin/i3bar -t
+    status_command /usr/bin/goblocks
+    position top
+    tray_output primary
+    font pango:Noto Sans, FontAwesome 9
+    colors {
+        background #000000
+        statusline #d9d7ce
+        active_workspace #7386FF #7386FF #FFFFFF
+        focused_workspace #7386FF #7386FF #FFFFFF
+    }
+}
+
+##########################
+#  Application handling
+##########################
+
+bindsym $mod+e exec dolphin
+bindsym $mod+c exec kcalc
+bindsym $mod+Return exec konsole
 
 # Assign applications to workspaces
 #  xprop | grep "CLASS"
@@ -161,3 +170,32 @@ assign [class="Thunderbird"] 1
 assign [class="skype"] 1
 assign [class="google-chrome"] 2
 assign [class="lollypop"] 4
+
+##########################
+# Init
+##########################
+
+# Set wallpaper
+exec --no-startup-id feh --bg-fill ~/Wallpapers/current.jpg
+
+# App Launcher
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Noto Sans 10" '
+
+# Notifications
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
+# Network Manager applet
+exec --no-startup-id nm-applet
+
+# Default startup apps
+exec pidgin
+exec thunderbird
+exec skypeforlinux
+exec dropbox
+
+# Plasma Integration
+exec --no-startup-id wmctrl -c Plasma
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+for_window [class="plasmashell"] floating enable
+for_window [class="Plasma"] floating enable, border none
+for_window [title="plasma-desktop"] floating enable, border none
