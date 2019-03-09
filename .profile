@@ -15,5 +15,13 @@ alias ac="cd /data/src/ac"
 alias m2="cd /data/src/m2"
 alias doc="cd $HOME/doc"
 
+alias ioglybeaconstart="aws ec2 start-instances --instance-ids i-05cfd77ef84284813"
+alias ioglybeaconstop="aws ec2 stop-instances --instance-ids i-05cfd77ef84284813"
+alias ioglybeaconstatus="aws ec2 describe-instance-status --instance-ids i-05cfd77ef84284813"
+
 [ -e ~/.rc/.dircolors ] && eval $(dircolors -b ~/.rc/.dircolors) ||
     eval $(dircolors -b)
+
+vimdir() {
+    vim $(find "$1" -type f)
+}
