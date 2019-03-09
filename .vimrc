@@ -35,9 +35,6 @@ Plugin 'shawncplus/phpcomplete.vim' " Omni complete
 Plugin 'cakebaker/scss-syntax.vim' " SCSS Syntax
 Plugin 'groenewege/vim-less' " LESS Syntax
 
-" CSS / HTML
-Plugin 'mattn/emmet-vim' " CSS/HTML auto completion
-
 " Markdown
 Plugin 'godlygeek/tabular' " plasticboy/vim-markdown dependency
 Plugin 'plasticboy/vim-markdown'
@@ -249,7 +246,7 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-au FileType go nmap <Leader>god <Plug>(go-def-vertical)
+au FileType go nmap <Leader>god <Plug>(go-def)
 au FileType go nmap <Leader>godv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>goi <Plug>(go-info)
 
@@ -286,7 +283,7 @@ let g:vim_markdown_toc_autofit = 1
 autocmd BufEnter *.md exe 'noremap <F5> :!xdg-open %:p<CR>'
 
 " Ale
-let b:ale_linters = {'php': ['php']}
+let g:ale_linters = {'php': ['php']}
 
 " CtrlP
 nmap <leader>bl :CtrlPBuffer<CR>
