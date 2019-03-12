@@ -6,8 +6,18 @@ cd ~/.rc
 git submodule init
 git submodule update
 cd ~
-ln -s .rc/.bashrc .rc/.gitconfig .rc/.gitignore .rc/.profile .rc/.screenrc .rc/.vim .rc/.vimrc .rc/.inputrc .rc/.octaverc .rc/.zshrc .rc/.i3 .rc/.Xresources ~/
-ln -s .rc/goblocks .config/goblocks
+ln -s ~/.rc/.config/goblocks .config/
+ln -s ~/.rc/.config/i3 .config/
+ln -s ~/.rc/.dircolors .
+ln -s ~/.rc/.gitconfig .
+ln -s ~/.rc/.gitignore .
+ln -s ~/.rc/.octaverc .
+ln -s ~/.rc/.profile .
+ln -s ~/.rc/.screenrc .
+ln -s ~/.rc/.vim .
+ln -s ~/.rc/.vimrc .
+ln -s ~/.rc/.Xresources .
+ln -s ~/..rc/.zshrc .
 vim +PluginInstall +qall
 
 ```
