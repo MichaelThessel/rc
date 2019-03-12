@@ -66,6 +66,7 @@ blocks:
           /: 90
           /tmp: 90
           /data: 90
+          /thesi: 90
 
     - type: load
       label: "L: "
@@ -84,7 +85,7 @@ blocks:
 
     - type: interface
       label: "N: "
-      interface_name: wlp3s0
+      interface_name: wlp58s0
       # interface_format is a format string that allows you to specify which
       # interface info to display. The syntax for this string is described here:
       # https://golang.org/pkg/text/template/
@@ -103,7 +104,7 @@ blocks:
 
     - type: wifi
       label: "W: "
-      interface_name: wlp3s0
+      interface_name: wlp58s0
       crit_quality: 30
 
     - type: battery
