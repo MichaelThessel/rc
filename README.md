@@ -8,6 +8,7 @@ git submodule update
 cd ~
 ln -s ~/.rc/.config/goblocks .config/
 ln -s ~/.rc/.config/i3 .config/
+ln -s ~/.rc/.config/dunst .config/
 ln -s ~/.rc/.dircolors .
 ln -s ~/.rc/.gitconfig .
 ln -s ~/.rc/.gitignore .
