@@ -127,7 +127,7 @@ blocks:
       channel: Master
 
     - type: time
-      update_interval: 0.5
+      update_interval: 60
       # The time_format value must be a string in Go's standard time format
       # (see https://golang.org/pkg/time/#pkg-constants).
-      time_format: 2006-01-02 15:04:05
+      time_format: Mon 2006-01-02 15:04
