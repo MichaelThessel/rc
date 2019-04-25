@@ -83,6 +83,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+
+# Don't share history between sessions
+unsetopt share_history
+
 alias vi="vim"
 
 source ~/.profile
