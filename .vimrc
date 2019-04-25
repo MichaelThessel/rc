@@ -172,6 +172,8 @@ nmap <leader>C :set wrap <CR> :set norelativenumber <CR> :set nonumber <CR> :set
 vmap <leader>w :s/\s\+$//g <CR> :%s/[^ ]\zs \+/ /g <CR> " Whitepsace cleanup
 nmap <leader><tab> :bn<CR>
 nmap <leader><s-tab> :bp<CR>
+nmap <leader>] :cn<CR>
+nmap <leader>[ :cp<CR>
 nmap <leader>bd :bdelete<CR>
 nmap <leader>v `[v`] " Select pasted text
 imap jj <ESC>
@@ -234,7 +236,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 
 "Vim-Go
-let g:syntastic_go_checkers = ['gometalinter']
+let g:syntastic_go_checkers = ['golangci-lint']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
