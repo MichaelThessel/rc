@@ -41,6 +41,7 @@ Plugin 'plasticboy/vim-markdown'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " Javascript
 Plugin 'pangloss/vim-javascript'
@@ -62,11 +63,15 @@ filetype plugin on
 set encoding=utf-8
 
 " Set color scheme
+set t_Co=256
 set termguicolors
+"set background=dark
+"colorscheme gruvbox
+"let g:gruvbox_invert_selection = 0
+"let g:gruvbox_contrast_dark = "hard"
+
 set background=dark
-colorscheme gruvbox
-let g:gruvbox_invert_selection = 0
-let g:gruvbox_contrast_dark = "hard"
+colorscheme PaperColor
 
 " Enable syntax highlighting
 syntax on
