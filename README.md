@@ -21,4 +21,6 @@ ln -s ~/.rc/.Xresources .
 ln -s ~/..rc/.zshrc .
 vim +PluginInstall +qall
 
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
 ```
