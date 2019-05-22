@@ -25,3 +25,6 @@ alias ioglybeaconstatus="aws ec2 describe-instance-status --instance-ids i-05cfd
 vimdir() {
     vim $(find "$1" -type f)
 }
+
+# Capslock acts as escape
+setxkbmap -option caps:escape
