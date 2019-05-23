@@ -9,7 +9,6 @@ Plugin 'gmarik/Vundle'
 " General
 Plugin 'w0rp/ale' " Syntax checker
 Plugin 'bling/vim-airline' " Status line
-Plugin 'unblevable/quick-scope' " Left right movements
 Plugin 'SirVer/ultisnips' " Snippets
 Plugin 'mileszs/ack.vim' " ACK
 Plugin 'tpope/vim-surround' " Surround
@@ -65,11 +64,6 @@ set encoding=utf-8
 " Set color scheme
 set t_Co=256
 set termguicolors
-"set background=dark
-"colorscheme gruvbox
-"let g:gruvbox_invert_selection = 0
-"let g:gruvbox_contrast_dark = "hard"
-
 set background=dark
 colorscheme PaperColor
 
@@ -195,16 +189,6 @@ vnoremap p "_dP
 " ############# Plugin Settings ################
 " ##############################################
 
-" PHP Documentor
-inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-D> :call PhpDocSingle()<CR>
-vnoremap <C-D> :call PhpDocRange()<CR>
-let g:pdv_cfg_Package = ""
-let g:pdv_cfg_Version = ""
-let g:pdv_cfg_Author = "Michael Thessel"
-let g:pdv_cfg_Copyright = "2016"
-let g:pdv_cfg_License = ""
-
 " Airline
 let g:airline_right_alt_sep = ''
 let g:airline_right_sep = ''
@@ -226,13 +210,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " GITGutter
 highlight clear SignColumn
-
-" Emmet plugin
-imap <leader>e <C-y>,
-let g:user_emmet_leader_key='<leader>e'
-
-"Quick Scope
-let g:qs_highlight_on_keys = []
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<leader><space>"
