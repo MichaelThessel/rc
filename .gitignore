@@ -1,11 +1,6 @@
 *.swp
 *.swo
-.vim/view
-.vim/.netrwhist
-.vim/bundle
-.phpcomplete_extended
-tags*
-.vim/__pycache__
-.vim/spell
+.config/nvim/spell
+.config/nvim/.netrwhist
 n98-magerun.phar
 n98-magerun2.phar
