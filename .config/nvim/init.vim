@@ -1,55 +1,40 @@
 " ##########################################
-" ############# Vundle Settings ############
+" ############# Plugins ####################
 " ##########################################
-filetype off
-set rtp+=~/.vim/bundle/Vundle
-call vundle#begin()
-Plugin 'gmarik/Vundle'
+
+call plug#begin('~/.local/share/nvim/plugged')
 
 " General
-Plugin 'w0rp/ale' " Syntax checker
-Plugin 'bling/vim-airline' " Status line
-Plugin 'SirVer/ultisnips' " Snippets
-Plugin 'mileszs/ack.vim' " ACK
-Plugin 'tpope/vim-surround' " Surround
-Plugin 'ludovicchabant/vim-gutentags' " Ctags generation
-Plugin 'Shougo/deoplete.nvim' " Auto completion
-Plugin 'roxma/nvim-yarp' " Deoplete dependency
-Plugin 'roxma/vim-hug-neovim-rpc' " Deoplete dependency
-Plugin 'mdempsky/gocode', {'rtp': 'vim/'} " Deoplete go dependency
-Plugin 'zchee/deoplete-go' " Deoplete go dependency
-Plugin 'ctrlpvim/ctrlp.vim' "File/buffer switching
+Plug 'w0rp/ale' " Syntax checker
+Plug 'bling/vim-airline' " Status line
+Plug 'mileszs/ack.vim' " ACK
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto completion
 
 " GIT
-Plugin 'tpope/vim-fugitive' " GIT Wrapper
-Plugin 'airblade/vim-gitgutter' " Diff in gutter
+Plug 'tpope/vim-fugitive' " GIT Wrapper
+Plug 'airblade/vim-gitgutter' " Diff in gutter
 
 " PHP
-Plugin 'StanAngeloff/php.vim' " PHP Syntax
-Plugin 'sumpygump/php-documentor-vim' " DocComments
-Plugin 'joonty/vdebug' " Debugging
-Plugin 'shawncplus/phpcomplete.vim' " Omni complete
+Plug 'StanAngeloff/php.vim' " PHP Syntax
 
 " SCSS / LESS
-Plugin 'cakebaker/scss-syntax.vim' " SCSS Syntax
-Plugin 'groenewege/vim-less' " LESS Syntax
+Plug 'cakebaker/scss-syntax.vim' " SCSS Syntax
+Plug 'groenewege/vim-less' " LESS Syntax
 
 " Markdown
-Plugin 'godlygeek/tabular' " plasticboy/vim-markdown dependency
-Plugin 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular' " plasticboy/vim-markdown dependency
+Plug 'plasticboy/vim-markdown'
 
 " Color schemes
-Plugin 'morhetz/gruvbox'
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 
 " Javascript
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 "Go
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'tag': 'v1.20'}
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " ###########################################
 " ############# General Settings ############
@@ -58,32 +43,19 @@ filetype plugin indent on
 " Enable filtype plugins
 filetype plugin on
 
-" Set encoding to UTF-8
-set encoding=utf-8
-
 " Set color scheme
-set t_Co=256
 set termguicolors
 set background=dark
-colorscheme PaperColor
+colorscheme gruvbox
 
 " Enable syntax highlighting
 syntax on
 
-" Search while you type
-set incsearch
-
 " Error format for make
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
-" Copy indent from current line when starting a new line
-set autoindent
-
 " Expand tabs into spaces
 set expandtab
-
-" Handle expanded tab spaces
-set smarttab
 
 " Use a 4 space tab
 set shiftwidth=4
@@ -107,17 +79,11 @@ au BufNewFile,BufReadPre,BufWinEnter *.wiki setlocal spell wrap
 au BufNewFile,BufReadPre,BufWinEnter *.txt setlocal spell wrap
 au BufNewFile,BufReadPre,BufWinEnter *.md setlocal spell wrap
 
-" Always show the status line
-set laststatus=2
-
 " Line numbers
 set number
 
 " Don't redraw while executing macros
 set lazyredraw
-
-" Undo levels
-set undolevels=1000
 
 " No swap files
 set noswapfile
@@ -133,12 +99,12 @@ set textwidth=80
 set colorcolumn=+1
 highlight ColorColumn ctermbg=235 guibg=gray14
 
+" File name completion
+set wildmode=longest,list
+
 " Highlight tab characters
 set list
 set listchars=tab:>-,precedes:<,extends:>
-
-" File name completion
-set wildmode=longest,list
 
 " Open file at line number file was left
 if has("autocmd")
@@ -158,6 +124,12 @@ set scrolloff=3
 
 " Use xmllint to auto indent xml files http://goo.gl/N8wrXh
 au BufRead,BufEnter *.xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 25
+autocmd FileType netrw setl bufhidden=delete " don't ask to save on close
 
 " ###########################################
 " ############# Key Mappings ################
@@ -181,9 +153,6 @@ imap jj <ESC>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-
-" Don't clear yank buffer on paste
-vnoremap p "_dP
 
 " ##############################################
 " ############# Plugin Settings ################
@@ -210,12 +179,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " GITGutter
 highlight clear SignColumn
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<leader><space>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsEditSplit="vertical"
 
 "Vim-Go
 let g:syntastic_go_checkers = ['golangci-lint']
@@ -244,23 +207,6 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
-"Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-autocmd InsertLeave * silent! pclose!
-
-inoremap <silent><expr> <TAB>
-\ pumvisible() ? "\<C-n>" :
-\ <SID>check_back_space() ? "\<TAB>" :
-\ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
-let col = col('.') - 1
-return !col || getline('.')[col - 1] =~ '\s'
-endfunction"}}}
-
-"Gutentags
-let g:gutentags_ctags_executable_php = 'ctags --fields=+l'
-
 " Markdown
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_toc_autofit = 1
@@ -269,5 +215,19 @@ autocmd BufEnter *.md exe 'noremap <F5> :!xdg-open %:p<CR>'
 " Ale
 let g:ale_linters = {'php': ['php']}
 
-" CtrlP
-nmap <leader>bl :CtrlPBuffer<CR>
+" Coc.nvim
+ inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

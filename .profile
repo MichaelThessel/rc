@@ -3,7 +3,8 @@ export PATH=$PATH:~/bin:~/bin/node/bin/:~/go/bin:/data/src/go/bin
 export GOPATH=/data/src/go
 export VISUAL="vim"
 
-alias vi="vim"
+alias vi="nvim"
+alias vim="nvim"
 alias open="xdg-open"
 
 alias aw="cd $GOPATH/src/github.com/MichaelThessel/amweb"
