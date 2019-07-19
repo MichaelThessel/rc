@@ -13,7 +13,7 @@
 	up = !git pull --rebase $@ && git submodule update --init --recursive
 	cob = checkout -b
 	cm = !git add -A && git commit -m
-	em = !vim `git ls-files -m --other --exclude-standard`
+	em = !nvim `git ls-files -m --other --exclude-standard`
 	uo = !git checkout master && git pull official master && git push origin master
 	lb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 
@@ -34,3 +34,5 @@
 	sslVerify = false
 [pull]
 	rebase = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
