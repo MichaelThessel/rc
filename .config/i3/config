@@ -192,10 +192,11 @@ exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec --no-startup-id nm-applet
 
 # Default startup apps
-exec pidgin
 exec thunderbird
-exec skypeforlinux
 exec dropbox
+exec spotify
+exec pidgin
+exec skypeforlinux
 
 # Plasma Integration
 exec --no-startup-id wmctrl -c Plasma
@@ -204,3 +205,7 @@ for_window [class="plasmashell"] floating enable
 for_window [class="Plasma"] floating enable, border none
 for_window [title="plasma-desktop"] floating enable, border none
 for_window [class="skype"] floating disable
+for_window [class="Spotify"] move to workspace 5
+for_window [class="skype"] move to workspace 1
+for_window [class="Pidgin"] move to workspace 1
+for_window [class="Thunderbird"] move to workspace 1
