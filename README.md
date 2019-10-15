@@ -19,6 +19,9 @@ ln -s ~/.rc/.screenrc .
 ln -s ~/.rc/.Xresources .
 ln -s ~/..rc/.zshrc .
 
+vim +PlugInstall
+vim +GoInstallBinaries
+
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 ```

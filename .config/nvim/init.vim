@@ -9,6 +9,27 @@ Plug 'w0rp/ale' " Syntax checker
 Plug 'bling/vim-airline' " Status line
 Plug 'mileszs/ack.vim' " ACK
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto completion
+Plug 'tpope/vim-surround' " Wrapping
+Plug 'tpope/vim-repeat' " Vim Surround dependency
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'graphql',
+    \ 'markdown',
+    \ 'vue',
+    \ 'lua',
+    \ 'php',
+    \ 'python',
+    \ 'ruby',
+    \ 'html',
+    \ 'swift' ] } " Autoformat
 
 " GIT
 Plug 'tpope/vim-fugitive' " GIT Wrapper
@@ -16,6 +37,8 @@ Plug 'airblade/vim-gitgutter' " Diff in gutter
 
 " PHP
 Plug 'StanAngeloff/php.vim' " PHP Syntax
+Plug 'honza/vim-snippets' " PHP Snippets for UltiSnips
+Plug 'alvan/vim-php-manual' " PHP Manual
 
 " SCSS / LESS
 Plug 'cakebaker/scss-syntax.vim' " SCSS Syntax
@@ -82,6 +105,9 @@ au BufNewFile,BufReadPre,BufWinEnter *.md setlocal spell wrap
 " Line numbers
 set number
 
+" Relative line numbers
+set nu rnu
+
 " Don't redraw while executing macros
 set lazyredraw
 
@@ -91,6 +117,9 @@ set noswapfile
 " Don't wrap lines
 set nowrap
 set formatoptions-=t
+
+" Don't highlight search results
+set nohls
 
 " Hightlight formatting issues (whitespace, lines 80+ chars)
 highlight Spacing ctermbg=167 ctermfg=white guibg=orange
@@ -136,7 +165,6 @@ autocmd FileType netrw setl bufhidden=delete " don't ask to save on close
 " ###########################################
 
 " General mappings
-set pastetoggle=<leader>i
 nmap <leader>w :set wrap <CR>
 nmap <leader>W :set nowrap <CR>
 nmap <leader>C :set wrap <CR> :set norelativenumber <CR> :set nonumber <CR> :set nolist <CR> :GitGutterDisable <CR> " Copy mode
@@ -216,18 +244,46 @@ autocmd BufEnter *.md exe 'noremap <F5> :!xdg-open %:p<CR>'
 let g:ale_linters = {'php': ['php']}
 
 " Coc.nvim
- inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
-
+" Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+
+" Coc Snippets
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Prettier
+"let g:prettier#autoformat =  0
+"autocmd BufWritePre *.php,.*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+"autocmd FileType php let b:prettier_ft_default_args = {
+"    \ 'parser': 'php',
+"    \ }
