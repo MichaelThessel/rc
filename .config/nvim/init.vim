@@ -39,6 +39,7 @@ Plug 'airblade/vim-gitgutter' " Diff in gutter
 Plug 'StanAngeloff/php.vim' " PHP Syntax
 Plug 'honza/vim-snippets' " PHP Snippets for UltiSnips
 Plug 'alvan/vim-php-manual' " PHP Manual
+Plug 'vim-vdebug/vdebug' " Xdebug support
 
 " SCSS / LESS
 Plug 'cakebaker/scss-syntax.vim' " SCSS Syntax
@@ -287,3 +288,9 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 "autocmd FileType php let b:prettier_ft_default_args = {
 "    \ 'parser': 'php',
 "    \ }
+
+" VDebug
+let g:vdebug_options = {'ide_key': 'vim-xdebug'}
+let g:vdebug_options = {'break_on_open': 0}
+let g:vdebug_options = {'server': '127.0.0.1'}
+let g:vdebug_options = {'port': '9000'}
