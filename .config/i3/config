@@ -36,9 +36,6 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-bindsym Mod1+Tab focus right
-bindsym Mod1+Shift+Tab focus left
-
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -194,8 +191,6 @@ exec --no-startup-id nm-applet
 # Default startup apps
 exec thunderbird
 exec dropbox
-exec spotify
-exec pidgin
 exec skypeforlinux
 
 # Plasma Integration
