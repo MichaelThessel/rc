@@ -5,7 +5,7 @@
 # Gaps
 for_window [class="^.*"] border pixel 2
 new_window pixel 2
-gaps inner 40
+gaps inner 20
 gaps outer 0
 
 # Font for window titles
@@ -16,6 +16,13 @@ client.focused           #ff9120 #191f26 #d9d7ce  #ff9120   #ff9120
 client.focused_inactive  #14191f #191f26 #b2babd  #14191f   #14191f
 client.unfocused         #14191f #151a1f #b2babd  #14191f   #14191f
 client.urgent            #59c2ff #191f26 #ffffff  #191f26   #59c2ff
+
+##########################
+# Mouse
+##########################
+
+# Don't focus window on mouse over
+focus_follows_mouse no
 
 ##########################
 # Keys
@@ -194,7 +201,8 @@ exec dropbox
 exec skypeforlinux
 
 # Plasma Integration
-exec --no-startup-id wmctrl -c Plasma
+exec --no-startup-id picom -b
+
 for_window [title="Desktop — Plasma"] kill, floating enable, border none
 for_window [class="plasmashell"] floating enable
 for_window [class="Plasma"] floating enable, border none
