@@ -3,6 +3,7 @@
 	name = Michael Thessel
 [diff]
 	tool = vimdiff
+	renamelimit = 5000
 [difftool]
 	prompt = false
 [alias]
@@ -26,8 +27,10 @@
 	status = auto
 [core]
 	excludesfile = ~/.gitignore
-	filemode = false
+	fileMode = false
 	editor = vim
+	autocrlf = false
+	eol = LF
 [credential]
 	helper = cache --timeout=86400
 [http]
