@@ -6,9 +6,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " General
 Plug 'w0rp/ale' " Syntax checker
-Plug 'bling/vim-airline' " Status line
+Plug 'vim-airline/vim-airline' " Status line
+Plug 'vim-airline/vim-airline-themes' " Status line themes
+
 Plug 'mileszs/ack.vim' " ACK
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto completion
+Plug 'Shougo/denite.nvim' " Fuzzy file finding
 
 " GIT
 Plug 'tpope/vim-fugitive' " GIT Wrapper
@@ -53,6 +56,12 @@ colorscheme gruvbox
 
 " Enable syntax highlighting
 syntax on
+
+" Include all subdirectories when using find
+set path+=**
+
+" Show matching files when tab completing
+set wildmenu
 
 " Error format for make
 set errorformat=%m\ in\ %f\ on\ line\ %l
@@ -167,14 +176,7 @@ vnoremap <F1> <ESC>
 " ##############################################
 
 " Airline
-let g:airline_right_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_left_alt_sep= ''
-let g:airline_left_sep = ''
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline_theme='minimalist'
 
 " Fugitive
 nmap <leader>gd :Gdiff<CR>
@@ -281,3 +283,29 @@ let g:vdebug_options = {'ide_key': 'vim-xdebug'}
 let g:vdebug_options = {'break_on_open': 0}
 let g:vdebug_options = {'server': '127.0.0.1'}
 let g:vdebug_options = {'port': '9000'}
+
+nmap <leader>f :Denite file/rec<CR>
+nmap ; :Denite buffer<CR>
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfuncti
+
+call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
