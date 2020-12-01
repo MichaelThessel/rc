@@ -28,8 +28,9 @@ Plug 'cakebaker/scss-syntax.vim' " SCSS Syntax
 Plug 'groenewege/vim-less' " LESS Syntax
 
 " Markdown
-Plug 'godlygeek/tabular' " plasticboy/vim-markdown dependency
-Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular' " Markdown requirement
+Plug 'gabrielelana/vim-markdown'
+
 
 " Color schemes
 Plug 'morhetz/gruvbox'
@@ -131,7 +132,10 @@ if has("autocmd")
 endif
 
 " Disable folding
+set foldmethod=syntax
+set foldnestmax=10
 set nofoldenable
+set foldlevel=2
 
 " Allow to switch buffers without saving
 set hidden
@@ -218,8 +222,6 @@ if executable('ag')
 endif
 
 " Markdown
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_toc_autofit = 1
 autocmd BufEnter *.md exe 'noremap <F5> :!xdg-open %:p<CR>'
 
 " Ale
