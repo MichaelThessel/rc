@@ -153,7 +153,6 @@ bar {
     i3bar_command /usr/bin/i3bar -t
     status_command /usr/bin/goblocks
     position top
-    tray_output primary
     font pango:Noto Sans, FontAwesome 9
     colors {
         background #000000
@@ -178,6 +177,7 @@ assign [class="Thunderbird"] 1
 assign [class="skype"] 1
 assign [class="google-chrome"] 2
 assign [class="lollypop"] 4
+assign [class="yakyak"] 1
 
 ##########################
 # Init
@@ -198,10 +198,7 @@ exec --no-startup-id nm-applet
 # Default startup apps
 exec thunderbird
 exec dropbox
-exec skypeforlinux
-
-# Plasma Integration
-exec --no-startup-id picom -b
+exec yakyak
 
 for_window [title="Desktop — Plasma"] kill, floating enable, border none
 for_window [class="plasmashell"] floating enable
