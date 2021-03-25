@@ -55,6 +55,10 @@ blocks:
       on-color: "#ff0000"
       off-color: "#222222"
 
+    - type: command
+      label: "S: "
+      update_interval: 3
+      command: "/home/thesi/bin/spotify_status.sh"
 
     # The disk block is an aggregate status of overall filesystem usage.
     - type: disk
@@ -125,3 +129,4 @@ blocks:
       # The time_format value must be a string in Go's standard time format
       # (see https://golang.org/pkg/time/#pkg-constants).
       time_format: Mon 2006-01-02 15:04
+
