@@ -123,6 +123,9 @@ bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# Show QR code of current clipboard content
+bindsym $mod+q exec xclip -selection clipboard -o | qrencode -o - |  feh -FZ -
+
 # Resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym h resize shrink width 10 px or 5 ppt
@@ -177,7 +180,7 @@ assign [class="Thunderbird"] 1
 assign [class="skype"] 1
 assign [class="google-chrome"] 2
 assign [class="lollypop"] 4
-assign [class="yakyak"] 1
+assign [class="crx_chfbpgnooceecdoohagngmjnndbbaeip"] 1
 
 ##########################
 # Init
@@ -198,7 +201,7 @@ exec --no-startup-id nm-applet
 # Default startup apps
 exec thunderbird
 exec dropbox
-exec yakyak
+exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=chfbpgnooceecdoohagngmjnndbbaeip
 
 for_window [title="Desktop — Plasma"] kill, floating enable, border none
 for_window [class="plasmashell"] floating enable
