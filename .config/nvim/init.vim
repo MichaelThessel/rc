@@ -12,25 +12,20 @@ Plug 'vim-airline/vim-airline-themes' " Status line themes
 Plug 'mileszs/ack.vim' " ACK
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto completion
 Plug 'Shougo/denite.nvim' " Fuzzy file finding
+Plug 'sheerun/vim-polyglot' "Multi language syntax highlighting
 
 " GIT
 Plug 'tpope/vim-fugitive' " GIT Wrapper
 Plug 'airblade/vim-gitgutter' " Diff in gutter
 
 " PHP
-Plug 'StanAngeloff/php.vim' " PHP Syntax
 Plug 'honza/vim-snippets' " PHP Snippets for UltiSnips
 Plug 'alvan/vim-php-manual' " PHP Manual
 Plug 'vim-vdebug/vdebug' " Xdebug support
 
-" SCSS / LESS
-Plug 'cakebaker/scss-syntax.vim' " SCSS Syntax
-Plug 'groenewege/vim-less' " LESS Syntax
-
 " Markdown
 Plug 'godlygeek/tabular' " Markdown requirement
 Plug 'gabrielelana/vim-markdown'
-
 
 " Color schemes
 Plug 'morhetz/gruvbox'
