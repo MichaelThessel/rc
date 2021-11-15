@@ -201,7 +201,6 @@ exec --no-startup-id nm-applet
 # Default startup apps
 exec thunderbird
 exec dropbox
-exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=chfbpgnooceecdoohagngmjnndbbaeip
 
 for_window [title="Desktop — Plasma"] kill, floating enable, border none
 for_window [class="plasmashell"] floating enable
