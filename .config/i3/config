@@ -11,11 +11,11 @@ gaps outer 0
 # Font for window titles
 font pango:Noto Sans, FontAwesome 9
 
-# Colors                 border  backgr  text     indicator child_border
-client.focused           #ff9120 #191f26 #d9d7ce  #ff9120   #ff9120
-client.focused_inactive  #14191f #191f26 #b2babd  #14191f   #14191f
-client.unfocused         #14191f #151a1f #b2babd  #14191f   #14191f
-client.urgent            #59c2ff #191f26 #ffffff  #191f26   #59c2ff
+# Colors border backgr text indicator child_border
+client.focused #689d6a #689d6a #282828 #282828
+client.focused_inactive #1d2021 #1d2021 #928374 #282828
+client.unfocused #32302f #32302f #928374 #282828
+client.urgent #cc241d #cc241d #ebdbb2 #282828
 
 ##########################
 # Mouse
@@ -147,6 +147,8 @@ bindsym $mod+r mode "resize"
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 3%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 3%+
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 ##########################
 #  Bar
@@ -158,10 +160,13 @@ bar {
     position top
     font pango:Noto Sans, FontAwesome 9
     colors {
-        background #000000
-        statusline #d9d7ce
-        active_workspace #ff9120 #ff9120 #FFFFFF
-        focused_workspace #ff9120 #ff9120 #FFFFFF
+        background #282828
+        statusline #ebdbb2
+        active_workspace #1d2021 #1d2021 #928374 #ffffff
+        focused_workspace #689d6a #689d6a #282828 #1d1f21
+        separator #928374
+        inactive_workspace #32302f #32302f #928374 #969896
+        urgent_workspace #cc241d #cc241d #ebdbb2 #ffffff
     }
 }
 
@@ -197,6 +202,9 @@ exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 # Network Manager applet
 exec --no-startup-id nm-applet
+
+# Power Management
+exec xss-lock -- i3lock -n -i ~/Wallpapers/current.png
 
 # Default startup apps
 exec thunderbird
