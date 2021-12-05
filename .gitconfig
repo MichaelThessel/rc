@@ -28,7 +28,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	fileMode = false
-	editor = vim
+	editor = nvim
 	autocrlf = false
 	eol = LF
 [credential]
