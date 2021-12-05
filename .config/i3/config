@@ -195,7 +195,7 @@ assign [class="crx_chfbpgnooceecdoohagngmjnndbbaeip"] 1
 exec --no-startup-id feh --bg-fill ~/Wallpapers/current.jpg
 
 # App Launcher
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Noto Sans 10" '
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu'
 
 # Notifications
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
