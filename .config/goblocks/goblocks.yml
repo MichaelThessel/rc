@@ -55,11 +55,6 @@ blocks:
       on-color: "#ff0000"
       off-color: "#222222"
 
-    - type: command
-      label: "S: "
-      update_interval: 3
-      command: "/home/thesi/bin/spotify_status.sh"
-
     # The disk block is an aggregate status of overall filesystem usage.
     - type: disk
       label: "D: "
