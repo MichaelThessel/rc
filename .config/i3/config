@@ -126,6 +126,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Show QR code of current clipboard content
 bindsym $mod+q exec xclip -selection clipboard -o | qrencode -o - |  feh -FZ -
 
+# Lock screen manually
+bindsym $mod+x exec "i3lock -n -i ~/Wallpapers/current.png"
+
 # Resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym h resize shrink width 10 px or 5 ppt
@@ -155,10 +158,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 ##########################
 
 bar {
-    i3bar_command /usr/bin/i3bar -t
-    status_command /usr/bin/goblocks
+    i3bar_command /run/current-system/sw/bin/i3bar -t
+    status_command i3status -c ~/.config/i3status
     position top
-    font pango:Noto Sans, FontAwesome 9
     colors {
         background #282828
         statusline #ebdbb2
@@ -174,9 +176,9 @@ bar {
 #  Application handling
 ##########################
 
-bindsym $mod+e exec dolphin
+bindsym $mod+e exec nemo
 bindsym $mod+c exec speedcrunch
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec alacritty
 
 # Assign applications to workspaces
 #  xprop | grep "CLASS"
@@ -208,14 +210,11 @@ exec xss-lock -- i3lock -n -i ~/Wallpapers/current.png
 
 # Default startup apps
 exec thunderbird
-exec dropbox
 
-for_window [title="Desktop — Plasma"] kill, floating enable, border none
-for_window [class="plasmashell"] floating enable
-for_window [class="Plasma"] floating enable, border none
-for_window [title="plasma-desktop"] floating enable, border none
+# Lock screen after 3 mins of inactivity
+exec --no-start-id xset s 180 10
+
+
 for_window [class="skype"] floating disable
 for_window [class="Spotify"] move to workspace 5
-for_window [class="skype"] move to workspace 1
-for_window [class="Pidgin"] move to workspace 1
 for_window [class="Thunderbird"] move to workspace 1
