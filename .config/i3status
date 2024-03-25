@@ -1,0 +1,55 @@
+general {
+        colors = true
+        interval = 5
+}
+
+order += "disk /"
+order += "disk /data"
+order += "wireless wlp58s0"
+order += "battery 0"
+order += "memory"
+order += "load"
+order += "tztime whitehorse"
+
+wireless wlp58s0 {
+        format_up = "W: (%quality at %essid, %bitrate) %ip"
+        format_down = "W: down"
+}
+
+battery 0 {
+        format = "%status %remaining"
+        format_down = "No battery"
+        status_chr = "CHR"
+        status_bat = "BAT"
+        status_unk = "? UNK"
+        status_full = "FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+tztime whitehorse {
+        format = "%Y-%m-%d %H:%M:%S %Z"
+        timezone = "America/Whitehorse"
+}
+
+load {
+        format = "%5min"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+        format = "%free"
+}
+
+disk "/data" {
+        format = "%free"
+}
+
+read_file uptime {
+        path = "/proc/uptime"
+}
